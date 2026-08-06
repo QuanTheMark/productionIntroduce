@@ -1,0 +1,94 @@
+
+    @import "/colorRoot.css";
+    
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body{
+        width: 100%;
+        min-height: 100vh;
+        min-height: 100dvh;
+        background-color: var(--white-color);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+    }
+
+.wrapper{
+        width: 500px;
+        background-color: var(--secondary-color);
+        opacity: 1; 
+        padding: 30px 20px;
+        border-radius: 8px;
+    }
+
+    .wrapper h2 {
+        text-align: center;
+        color: #1a426e;
+        margin-bottom: 20px;
+    }
+
+    .form-control{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 15px; 
+    }  
+
+    .input-control{
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        width: 100%;
+    }
+
+    .input-control label {
+        color: #2c3e50;
+        font-weight: 500;
+    }
+
+    .input-control input{
+        width: 100%;
+        height: 45px;
+        padding: 0 15px;
+        border: none;
+        outline: none;
+        border-radius: 8px;
+        opacity: 0.6;
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+    input:focus{
+        border: var(--success-color) 2px solid;
+    }
+
+    .button-control {
+        margin-top: 10px;
+        display: flex;
+        justify-content: center;
+    
+    }
+
+    .confirmBtn{
+        width: 100%;
+        height: 45px;
+        border: none;
+        outline: none;
+        font-size: 1.2rem;
+        border-radius: 8px;
+        background-color: var(--white-color);
+        color: #333;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .confirmBtn:hover {
+        background-color: #f0f0f0;
+        border: var(--success-color) 2px solid;
+    }

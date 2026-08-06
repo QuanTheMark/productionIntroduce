@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Google+Sans+Flex:opsz,wght@6..144,1..1000&family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="inputRoot.css">
+    <title>Register</title>
+</head>
+
+<style>
+
+    .sign-in{
+        margin-top: 20px ;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+</style>
+
+<body>
+    <div class = "wrapper">
+        <div><h2>Register</h2></div>
+        <form class = "form-control">
+            <div class = "input-control">
+                <label for="username">Username</label>
+                <input type="text" name = "username" id = "username" 
+                placeholder = "Enter your username" required>
+            </div>
+            <div class = "input-control">
+                <label for="email">Email</label>
+                <input type="email" name = "email" id = "email" 
+                placeholder = "Enter your email" required>
+            </div>
+            <div class = "input-control">
+                <label for="password">Password</label>
+                <input type="password" name = "password" id = "password" 
+                placeholder = "Enter your password" required>
+            </div>
+            <div class = "input-control">
+                <label for="confirmPassword">Confirm Password</label>
+                <input type="password" name = "confirmPassword" id = "confirmPassword" 
+                placeholder = "Confirm your password" required>
+            </div>
+            <div class = "button-control">
+                <button class = "confirmBtn" type="submit">Register</button>
+            </div>
+          
+        </form>
+        <div class = "sign-in">
+            <a href="/login.html">Already have an account? Sign in</a>
+        </div>
+    </div>
+</body>
+<script src="register.js" defer></script>
+</html>

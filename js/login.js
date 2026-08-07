@@ -2,8 +2,8 @@ const usernameInput        = document.getElementById('username');
 const passwordInput         = document.getElementById('password');
 const loginBtn             = document.querySelector('.confirmBtn');
 
-loginBtn.addEventListener('click', function(event){
-    // event.preventDefault();
+loginBtn.addEventListener('click', function(){
+   
     const getUsers = localStorage.getItem('userList');
     const users = JSON.parse(getUsers) || [];
     const username   = usernameInput.value.trim();
@@ -35,7 +35,7 @@ loginBtn.addEventListener('click', function(event){
     localStorage.setItem('userActive', JSON.stringify(userActive));
 
     setTimeout(() => {
-        window.location.href = "/index.html";
+        window.location.href = "/html/index.html";
     }, 1500);
     alert("Đăng nhập thành công!");
 })

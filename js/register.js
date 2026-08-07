@@ -6,9 +6,8 @@ const confirmPasswordInput  = document.getElementById('confirmPassword');
 
 const registerBtn = document.querySelector('.confirmBtn');
 
-registerBtn.addEventListener('click', function(event){
+registerBtn.addEventListener('click', function(){
 
-    event.preventDefault();
     let userList = JSON.parse(localStorage.getItem('userList')) || [] ;
     const username          = usernameInput.value.trim();
     const email             = emailInput.value.trim();
@@ -76,7 +75,7 @@ registerBtn.addEventListener('click', function(event){
     }
 
     localStorage.setItem('userActive', JSON.stringify(userActive));
-    window.location.href = "/index.html";
+    window.location.href = "/html/index.html";
     alert("Đăng ký thành công!")
 
 })

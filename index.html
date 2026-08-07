@@ -21,6 +21,7 @@
     'opsz' 24;
     transform: scale(1.5);
     }
+
     *{
         padding: 0;
         margin: 0;
@@ -94,7 +95,6 @@
     }
 
     .userPanel_image.active{
-        display: block;
         background-size: contain;
         background-repeat: no-repeat;
         min-width: 50px;
@@ -108,12 +108,12 @@
         background-color: var(--success-color);
         border-radius: 20px;
         opacity: 0;
-        transform: translateX(-100%);
+        transform: scaleX(0);
     }
 
     .current.active{
         opacity: 1;
-        transform: translateX(0);
+        transform: scaleX(1);
         transition: all 0.3s ease-in-out;
     }
 
@@ -148,7 +148,99 @@
     opacity: 1;
     visibility: visible;
 
- 
+    
+}
+
+
+@media screen and ( width <= 440.1px){
+    .menuBar{
+       display: flex;
+       justify-content: space-around;
+       align-items: center;
+    }
+
+    .toolBar{
+        display: none;
+    }
+
+    .userPanel_mobile{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 10px;
+        margin-top: 20px;
+
+    }
+    .userPanel_image{
+        background-color: var(--white-color);
+        width: 50px;
+        height: 50px;
+        border-radius: 30px;
+       
+        
+    }
+
+    .menuBtn{
+    background-image: url("./resources/menu.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: black;
+    width: 50px;
+    height: 50px;
+    }
+
+    .sideBar{
+        height: 100vh;
+        width: 250px;
+        background-color: var(--white-color);
+        position: fixed;
+        top: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        padding: 5px;
+        opacity: 0;
+        transform: translateX(100%);
+        transition: all 0.3s ease-in-out;
+    }
+    
+    .menuClose{
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        width: 50px;
+        height: 50px;
+        background-image: url("./resources/close.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-color: var(--danger-color);
+    }
+
+    ul{
+        width: 100%;
+        line-height: 3;
+
+    }
+
+    ul li{
+        list-style: none;
+        font-size: 1.2rem;
+        font-weight: 600;
+        border-bottom: black 2px solid;
+    
+    }
+
+    .logo{
+        font-size: 1.5rem;
+        justify-content: space-between;
+    }
+
+    .logo .logo_image{
+        min-width: 75px;
+        min-height: 50px;
+    }   
+
 }
 
 
@@ -181,23 +273,15 @@
                     <div class = "current"></div>
                 </div>
             </div>
-            <div class = "userPanel">
-                <div class = "userPanel_image">
-                    <span class="material-symbols-outlined">person</span>
-                </div>
-                <div class ="registerBtn ">
-                    <a href="/register.html">Register</a>
-                </div>
-                <div class ="loginBtn ">
-                    <a href="/login.html">Login</a>
-                </div>
-            </div>
+            <div class = "userPanel"></div>
         </section>
     </header>
     <main></main>
     <footer></footer>
 </body>
 <script>
+
+    
     const pages = document.querySelectorAll(".toolBar a");
     pages.forEach(page => {
         page.addEventListener("click", (event) =>{
@@ -207,25 +291,77 @@
 
             event.target.nextElementSibling.classList.add("active");
 
-        })
+        });
 
+    });
+
+    let deviceWidth = window.innerWidth > 440.1;
+    renderLayout();
+   
+    window.addEventListener('resize', function(){
+        const currentWidth = window.innerWidth > 440.1;
+        if(deviceWidth != currentWidth){
+            deviceWidth = currentWidth;
+            renderLayout();
+        }
     })
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ function renderLayout(){
     const homePage = document.querySelector('.userPanel');
     const userActive  = JSON.parse(localStorage.getItem('userActive'));
 
-    if(userActive != null) {
+
+    if(deviceWidth){
+    if(userActive != null ) {
         homePage.innerHTML = 
         ` <div class = "userPanel_image active"></div>
-                <div class ="setting">
+                <div>
                     <a href = "#"><h3>${userActive.username}</h3></a>
-                    <div class="dropdown-content">
+                    <div>
                     <button class = "logOutBtn">Logout</button>
                     </div>
                 </div>`
         
         const userImg = document.querySelector('.userPanel_image');
-        userImg.style.backgroundImage = `url(https://ui-avatars.com/api/?name=${encodeURIComponent(userActive.username)}&background=random)`;
+        userImg.style.backgroundImage = `url('https://ui-avatars.com/api/?name=${encodeURIComponent(userActive.username)}&background=random')`;
         const userLogout = document.querySelector('.logOutBtn');
         userLogout.onclick = function(){
             localStorage.removeItem('userActive');
@@ -233,7 +369,50 @@
         }
         
 
+    }else{
+            homePage.innerHTML = 
+            `
+            <div class = "userPanel_image">
+                    <span class="material-symbols-outlined">person</span>
+                </div>
+                <div class ="registerBtn">
+                    <a href="/register.html">Register</a>
+                </div>
+                <div class ="loginBtn">
+                    <a href="/login.html">Login</a>
+            </div>
+            `
+        }
+}else{
+    homePage.innerHTML = 
+    `   <div class = "menuBtn"></div>
+        <div class = "sideBar">
+            <div class = "menuClose"></div>
+            <div class = "userPanel_mobile">
+                <div class = "userPanel_image">
+                        <span class="material-symbols-outlined">person</span>
+                </div>
+                <ul>
+                <li><a href = "/register.html">Register</a></li>    
+                <li><a href = "/login.html">Login</a></li>   
+                </ul>
+            </div>
+        </div>
+    `;
+
+    const sideBar = document.querySelector('.sideBar');
+    const menuBtn = document.querySelector('.menuBtn');
+    const menuClose = document.querySelector('.menuClose');
+    menuBtn.onclick = function(){
+        sideBar.style.opacity = "1";
+        sideBar.style.transform = "translateX(0)";
     }
     
+    menuClose.onclick = function(){
+        sideBar.style.opacity = "0";
+        sideBar.style.transform = "translateX(100%)";
+    }
+}
+    }
 </script>
 </html>

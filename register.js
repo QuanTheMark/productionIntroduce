@@ -14,7 +14,7 @@ registerBtn.addEventListener('click', function(event){
     const email             = emailInput.value.trim();
     const password          = passwordInput.value.trim();
     const confirmPassword   = confirmPasswordInput.value.trim();
-    const usernamePattern   = /^[a-zA-z0-9]*$/;
+    const usernamePattern   = /^[a-zA-Z0-9]*$/;
     
 
     if(username == "" || password == "" || email == "" || confirmPassword == ""){

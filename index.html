@@ -181,6 +181,14 @@
         
     }
 
+    .userPanel_image.active{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+       
+        
+    }
+
     .menuBtn{
     background-image: url("./resources/menu.png");
     background-size: contain;
@@ -205,6 +213,24 @@
         transition: all 0.3s ease-in-out;
     }
     
+    .mobileLogout{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: auto;
+
+    }
+
+    .sideBar button{
+        background-color: var(--danger-color);
+        color: var(--white-color);
+        width: 90%;
+        height: 50px;
+        border-radius: 20px;
+        font-size: 1.2rem;
+        font-weight: 600;
+    }
+
     .menuClose{
         display: flex;
         justify-content: flex-start;
@@ -347,15 +373,15 @@
  function renderLayout(){
     const homePage = document.querySelector('.userPanel');
     const userActive  = JSON.parse(localStorage.getItem('userActive'));
-
+  
 
     if(deviceWidth){
     if(userActive != null ) {
         homePage.innerHTML = 
         ` <div class = "userPanel_image active"></div>
-                <div>
+                <div class = "setting">
                     <a href = "#"><h3>${userActive.username}</h3></a>
-                    <div>
+                    <div class = "dropdown-content">
                     <button class = "logOutBtn">Logout</button>
                     </div>
                 </div>`
@@ -384,7 +410,36 @@
             `
         }
 }else{
-    homePage.innerHTML = 
+    if(userActive != null){
+        homePage.innerHTML = 
+    `   <div class = "menuBtn"></div>
+        <div class = "sideBar">
+            <div class = "menuClose"></div>
+            <div class = "userPanel_mobile">
+                <div class = "userPanel_image active"></div>
+                <ul>
+                <li><a href = "#">Home</a></li>    
+                <li><a href = "#">About</a></li>
+                <li><a href = "#">Production</a></li>  
+                <li><a href = "#">Contact</a></li>     
+                </ul>
+            </div>
+            <div class = "mobileLogout">
+                <button class = "logOutBtn">Logout</button>
+            </div>
+        </div>
+    `;
+
+        const userImg = document.querySelector('.userPanel_image');
+        userImg.style.backgroundImage = `url('https://ui-avatars.com/api/?name=${encodeURIComponent(userActive.username)}&background=random')`;
+        const userLogout = document.querySelector('.logOutBtn');
+        userLogout.onclick = function(){
+            localStorage.removeItem('userActive');
+            window.location.reload();
+        }
+    }
+    else{
+        homePage.innerHTML = 
     `   <div class = "menuBtn"></div>
         <div class = "sideBar">
             <div class = "menuClose"></div>
@@ -399,6 +454,8 @@
             </div>
         </div>
     `;
+    }
+    
 
     const sideBar = document.querySelector('.sideBar');
     const menuBtn = document.querySelector('.menuBtn');

@@ -92,3 +92,15 @@
         background-color: #f0f0f0;
         border: var(--success-color) 2px solid;
     }
+
+    
+    .btn-customs{
+        width: 200px;
+        height: 40px;
+        margin-top: 20px;
+        border-radius: 5px;
+        background-color: var(--black-color);
+        color: var(--white-color);
+        border: none;
+        cursor: pointer;
+    }

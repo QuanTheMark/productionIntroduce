@@ -36,7 +36,7 @@ const pages = document.querySelectorAll(".toolBar a");
                 <div class = "setting">
                     <a href = "#"><h3>${userActive.username}</h3></a>
                     <div class = "dropdown-content">
-                    <button class = "logOutBtn">Logout</button>
+                    <button class = "logOutBtn">Đăng xuất</button>
                     </div>
                 </div>`
         
@@ -52,14 +52,14 @@ const pages = document.querySelectorAll(".toolBar a");
     }else{
             homePage.innerHTML = 
             `
-            <div class = "userPanel_image">
+                <div class = "userPanel_image">
                     <span class="material-symbols-outlined">person</span>
                 </div>
                 <div class ="registerBtn">
-                    <a href="./register.html">Register</a>
+                    <a href="./register.html">Đăng ký</a>
                 </div>
                 <div class ="loginBtn">
-                    <a href="./login.html">Login</a>
+                    <a href="./login.html">Đăng nhập</a>
             </div>
             `
         }
@@ -72,14 +72,14 @@ const pages = document.querySelectorAll(".toolBar a");
             <div class = "userPanel_mobile">
                 <div class = "userPanel_image active"></div>
                 <ul>
-                <li><a href = "#">Home</a></li>    
-                <li><a href = "#">About</a></li>
-                <li><a href = "#">Production</a></li>  
-                <li><a href = "#">Contact</a></li>     
+                <li><a href = "#">Trang chủ</a></li>    
+                <li><a href = "#">Sản phẩm</a></li>
+                <li><a href = "#">Liên hệ</a></li>  
+                <li><a href = "#">Về chúng tôi</a></li>     
                 </ul>
             </div>
             <div class = "mobileLogout">
-                <button class = "logOutBtn">Logout</button>
+                <button class = "logOutBtn">Đăng xuất</button>
             </div>
         </div>
     `;
@@ -102,8 +102,8 @@ const pages = document.querySelectorAll(".toolBar a");
                         <span class="material-symbols-outlined">person</span>
                 </div>
                 <ul>
-                <li><a href = "./register.html">Register</a></li>    
-                <li><a href = "./login.html">Login</a></li>   
+                <li><a href = "./register.html">Đăng ký</a></li>    
+                <li><a href = "./login.html">Đăng nhập</a></li>   
                 </ul>
             </div>
         </div>

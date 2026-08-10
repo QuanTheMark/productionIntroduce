@@ -75,7 +75,7 @@ registerBtn.addEventListener('click', function(){
     }
 
     localStorage.setItem('userActive', JSON.stringify(userActive));
-    window.location.href = "/html/index.html";
+    window.location.href = "/index.html";
     alert("Đăng ký thành công!")
 
 })

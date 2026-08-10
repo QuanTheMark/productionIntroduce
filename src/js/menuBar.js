@@ -56,10 +56,10 @@ const pages = document.querySelectorAll(".toolBar a");
                     <span class="material-symbols-outlined">person</span>
                 </div>
                 <div class ="registerBtn">
-                    <a href="./register.html">Đăng ký</a>
+                    <a href="/register.html">Đăng ký</a>
                 </div>
                 <div class ="loginBtn">
-                    <a href="./login.html">Đăng nhập</a>
+                    <a href="/login.html">Đăng nhập</a>
             </div>
             `
         }
@@ -102,8 +102,8 @@ const pages = document.querySelectorAll(".toolBar a");
                         <span class="material-symbols-outlined">person</span>
                 </div>
                 <ul>
-                <li><a href = "./register.html">Đăng ký</a></li>    
-                <li><a href = "./login.html">Đăng nhập</a></li>   
+                <li><a href = "/register.html">Đăng ký</a></li>    
+                <li><a href = "/login.html">Đăng nhập</a></li>   
                 </ul>
             </div>
         </div>

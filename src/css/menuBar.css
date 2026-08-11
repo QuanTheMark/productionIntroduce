@@ -20,6 +20,17 @@
     font-size: 1.2rem;
     }
 
+    .toolBar div.active{
+        width: 100px;
+        height: 50px;
+        background-color: gray;
+        text-align: center;
+        font-size: 1.5rem;
+        font-weight: 600;
+        border-radius: 5px;
+    }   
+
+
 
     .logo{
         display: flex;

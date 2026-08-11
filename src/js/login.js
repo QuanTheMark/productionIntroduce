@@ -34,9 +34,7 @@ loginBtn.addEventListener('click', function(){
 
     localStorage.setItem('userActive', JSON.stringify(userActive));
 
-    setTimeout(() => {
-        window.location.href = "/index.html";
-    }, 1500);
+    window.location.href = "/index.html";
     alert("Đăng nhập thành công!");
 })
 

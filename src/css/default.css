@@ -37,4 +37,16 @@
         background-size: cover;
         background-position: center;
         overflow-x: hidden;
+        visibility: hidden;
+    
+        opacity: 0;
+        transition: opacity 0.8s ease-in-out;
     }
+
+    body.loaded{
+        visibility: visible;
+        opacity: 1;
+     }
+
+
+

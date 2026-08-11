@@ -1,11 +1,12 @@
 
     @import "./colorRoot.css";
-    
+
     *{
         margin: 0;
         padding: 0;
         box-sizing: border-box;
         font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
     }
 
     body{
@@ -17,11 +18,12 @@
         justify-content: center;
         align-items: center;
         padding: 20px;
+        background-image: url("/src/resources/background.png");
     }
 
 .wrapper{
         width: 500px;
-        background-color: var(--secondary-color);
+        background-color: #799cb4;
         opacity: 1; 
         padding: 30px 20px;
         border-radius: 8px;
@@ -48,7 +50,7 @@
     }
 
     .input-control label {
-        color: #2c3e50;
+        color: var(--black-color);
         font-weight: 500;
     }
 
@@ -89,7 +91,7 @@
     }
 
     .confirmBtn:hover {
-        background-color: #f0f0f0;
+        background-color: var(--white-color);
         border: var(--success-color) 2px solid;
     }
 

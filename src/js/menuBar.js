@@ -1,29 +1,8 @@
-const pages = document.querySelectorAll(".toolBar a");
-    pages.forEach(page => {
-        page.addEventListener("click", (event) =>{
-            pages.forEach(p => {
-                p.nextElementSibling.classList.remove("active");
-            })
 
-            event.target.nextElementSibling.classList.add("active");
-
-        });
-
-    });
 
     let deviceWidth = window.innerWidth > 442;
     renderMenu();
    
-    window.addEventListener('resize', function(){
-        const currentWidth = window.innerWidth > 442;
-        if(deviceWidth != currentWidth){
-            deviceWidth = currentWidth;
-            renderMenu();
-        }
-    })
-
-
-
  function renderMenu(){
     const homePage = document.querySelector('.userPanel');
     const userActive  = JSON.parse(localStorage.getItem('userActive'));

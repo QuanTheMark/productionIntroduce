@@ -57,7 +57,7 @@
             </div>
 
             <div class = "banners">
-                    <button class = "btnLeft"></button>
+                    <button class = "btnLeft"><i class="fa-solid fa-circle-arrow-left" style="color: rgb(0, 0, 0);"></i></button>
          
             <div class = "productEvaluation">
                 <div class = "productEvaluation_container">
@@ -66,11 +66,12 @@
                         <h3>Quỳnh Chi</h3>
                         <h4>@qchicute</h4>
                         <div class = "reviewer_rate">
-                            <span class="material-symbols-outlined">star</span>
-                            <span class="material-symbols-outlined">star</span>
-                            <span class="material-symbols-outlined">star</span>
-                            <span class="material-symbols-outlined">star</span>
-                            <span class="material-symbols-outlined">star</span>
+                            <span><i class="fa-solid fa-star"></i></span>
+                            <span><i class="fa-solid fa-star"></i></span>
+                            <span><i class="fa-solid fa-star"></i></span>
+                            <span><i class="fa-solid fa-star"></i></span>
+                            <span><i class="fa-regular fa-star"></i></span>
+                          
                         </div>
                         <div class = "reviewer_feedback">
                         <p>Mình rất hài lòng với chất lượng sản phẩm của Abydas. Giày chuẩn Authentic 100%, form đẹp, đi ôm chân. Giao hàng nhanh và đóng gói cẩn thận.</p>
@@ -84,11 +85,11 @@
                         <h3>Gia Bảo</h3>
                         <h4>@baobao</h4>
                         <div class = "reviewer_rate">
-                            <span class="material-symbols-outlined">star</span>
-                            <span class="material-symbols-outlined">star</span>
-                            <span class="material-symbols-outlined">star</span>
-                            <span class="material-symbols-outlined">star</span>
-                            <span class="material-symbols-outlined">star</span>
+                            <i class="fa-solid fa-star" style="color: rgb(255, 255, 255);"></i>
+                            <i class="fa-solid fa-star" style="color: rgb(255, 255, 255);"></i>
+                            <i class="fa-solid fa-star" style="color: rgb(255, 255, 255);"></i>
+                            <i class="fa-solid fa-star" style="color: rgb(255, 255, 255);"></i>
+                            <span><i class="fa-regular fa-star"></i></span>
                         </div>
                         <div class = "reviewer_feedback">
                         <p>Abydas không chỉ bán giày mà còn mang đến trải nghiệm tuyệt vời. Website dễ dùng, sản phẩm đa dạng và luôn đăng tải những mặt hàng mới lạ.</p>
@@ -102,11 +103,11 @@
                         <h3>Minh Quân</h3>
                         <h4>@mquan</h4>
                         <div class = "reviewer_rate">
-                            <span class="material-symbols-outlined">star</span>
-                            <span class="material-symbols-outlined">star</span>
-                            <span class="material-symbols-outlined">star</span>
-                            <span class="material-symbols-outlined">star</span>
-                            <span class="material-symbols-outlined">star</span>
+                            <span><i class="fa-solid fa-star"></i></span>
+                            <span><i class="fa-solid fa-star"></i></span>
+                            <span><i class="fa-solid fa-star"></i></span>
+                            <span><i class="fa-solid fa-star"></i></span>
+                            <span><i class="fa-regular fa-star"></i></span>
                         </div>
                         <div class = "reviewer_feedback">
                         <p>Đã mua nhiều lần tại Adydas và chưa bao giờ thất vọng. Sản phẩm chất lượng, giá hợp lí và dịch vụ chăm sóc khách hàng rất tốt</p>
@@ -114,9 +115,53 @@
                     </div>
                 </div>
             </div>
-                <button class = "btnRight"></button>
+                <button class = "btnRight"><i class="fa-solid fa-circle-arrow-right" style="color: rgb(0, 0, 0);"></i></button>
         </div>
         </section>
+
+        <section class = "reputation">
+           <div class = "reputation_content">
+                <div><i class="fa-regular fa-star"></i></div>
+                <div class = "content_text">
+                    <p>50+</p>
+                    <p>THƯƠNG HIỆU HÀNG ĐẦU</p>
+            
+                </div>
+
+           </div>
+
+           <div class = "reputation_content">
+                <div><i class="fa-solid fa-shield-halved"></i></div>
+                <div class = "content_text">
+                    <p>100%</p>
+                    <p>CHÍNH HÃNG TOÀN CẦU</p>
+            
+                </div>
+
+           </div>
+
+           <div class = "reputation_content">
+                <div><i class="fa-solid fa-repeat"></i></i></div>
+                <div class = "content_text">
+                    <p>7 NGÀY</p>
+                    <p>ĐỔI TRẢ LINH HOẠT</p>
+            
+                </div>
+
+            </div>
+
+            <div class = "reputation_content">
+                <div><i class="fa-solid fa-heart"></i></div>
+                <div class = "content_text">
+                    <p>10.000+</p>
+                    <p>KHÁCH HÀNG TIN TƯỞNG</p>
+            
+                </div>
+
+            </div>
+    
+        </section>
+
 
         `
 

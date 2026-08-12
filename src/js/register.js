@@ -62,7 +62,8 @@ registerBtn.addEventListener('click', function(){
     const user = {
         username: username,
         userEmail: email,
-        userPassword: password
+        userPassword: password,
+        userWallet: 0
         }
 
     userList.push(user);
@@ -71,6 +72,7 @@ registerBtn.addEventListener('click', function(){
 
     const userActive = {
         username: username,
+        userWallet: 0,
         state: 'active'
     }
 

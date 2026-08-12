@@ -8,7 +8,7 @@ loginBtn.addEventListener('click', function(){
     const users = JSON.parse(getUsers) || [];
     const username   = usernameInput.value.trim();
     const password   = passwordInput.value.trim();
-
+  
     if(username == "" || password == ""){
         alert("Nhập đầy đủ thông tin!")
         return;
@@ -29,6 +29,7 @@ loginBtn.addEventListener('click', function(){
     
      const userActive = {
         username: username,
+        userWallet: userFound.userWallet,
         state: 'active'
     }
 

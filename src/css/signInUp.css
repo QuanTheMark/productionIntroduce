@@ -1,4 +1,4 @@
-@import "./reset.css";
+@import "./root.css";
 @import "./template.css";
 
 
@@ -44,7 +44,8 @@ body{
 
 .input-control label {
     color: var(--black-color);
-    font-weight: 500;
+    font-weight: 600;
+
 }
 
 .input-control input{

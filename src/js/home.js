@@ -1,7 +1,9 @@
     const start = document.querySelector(".explore_btnExplore");
     const main = document.querySelector("#main");
     const footer = document.querySelector("#footer");
+    footer.style.display = "none";
     start.addEventListener("click", function(){
+        footer.style.display = "block";
         main.innerHTML = 
 
         `

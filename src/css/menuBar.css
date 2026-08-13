@@ -1,6 +1,6 @@
- @import "./colorRoot.css";
+@import "./colorRoot.css";
 
-    .menuBar {
+.menuBar {
     height: 100px;
     background-color: var(--white-color);
     display: grid;
@@ -9,124 +9,157 @@
     top: 0;
     z-index: 999;
     margin: 0;
-    
-
-    }
-
-
-    .menuBar a {
-    text-decoration: none;
-    color: black;
-    font-size: 1.2rem;
-    }
-
-    .toolBar div.active{
-        width: 100px;
-        height: 50px;
-        background-color: gray;
-        text-align: center;
-        font-size: 1.5rem;
-        font-weight: 600;
-        border-radius: 5px;
-    }   
-
-
-
-    .logo{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 2rem;
-        font-weight: 600;
-    }
-
-    .logo .logo_image{
-        background-image: url("../resources/LogoPage.png");
-        background-size: contain;
-        background-repeat: no-repeat;
-        min-width: 150px;
-        min-height: 100px;
-    }
-
-    .toolBar{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    .userPanel{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 20px;
-    }
-   
-    .userPanel_image{
-        background-color: var(--white-color);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-width: 50px;
-        min-height: 50px;
-        border-radius: 30px;
-       
-        
-    }
-
-    .userPanel_image.active{
-        background-size: contain;
-        background-repeat: no-repeat;
-        min-width: 50px;
-        min-height: 50px;
-        border-radius: 30px;
-    }
-
-    .setting{
-        position: relative;
-    }
-
-    .userWallet{
-        margin-top: 20px;
-        display: flex;
-        gap: 10px;
-        color: var(--success-color);
-        font-weight: 600;
-    }
-
-    .dropdown-content{
-        width: 100px;
-        height: 100px;
-        position: absolute;
-        opacity: 0;
-        visibility: hidden;
-        top: 100%;
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        background-color: var(--white-color);
-        border-radius: 5px;
-        filter: drop-shadow(4px 4px 8px var(--black-color));
-    }
-
-    .dropdown-content button{
-        cursor: pointer;
-        width: 100%;
-        height: 100%;
-        background-color: var(--danger-color);
-        text-align: center;
-        color: var(--white-color);
-        border: none;
-        border-radius: 5px;
-        font-size: .8rem;
-        font-weight: 600;
-
-    }
-
-    .setting:hover .dropdown-content {
-    opacity: 1;
-    visibility: visible;
-
-    
 }
 
 
+.menuBar a {
+    text-decoration: none;
+    color: black;
+    font-size: 1.2rem;
+}
+
+.toolBar div.active{
+    width: 100px;
+    height: 50px;
+    background-color: gray;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    border-radius: 5px;
+}
+
+
+
+.logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.logo .logo_image{
+    background-image: url("../resources/LogoPage.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    min-width: 150px;
+    min-height: 100px;
+}
+
+.toolBar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.userPanel{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.userPanel_image{
+    background-color: var(--white-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 50px;
+    min-height: 50px;
+    border-radius: 30px;
+}
+
+.userPanel_image.active{
+    background-size: contain;
+    background-repeat: no-repeat;
+    min-width: 50px;
+    min-height: 50px;
+    border-radius: 30px;
+}
+
+.setting{
+    position: relative;
+}
+
+.userWallet{
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+    color: var(--success-color);
+    font-weight: 600;
+}
+
+.dropdown-content{
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    top: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: var(--white-color);
+    border-radius: 5px;
+    filter: drop-shadow(4px 4px 8px var(--black-color));
+}
+
+.dropdown-content button{
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    background-color: var(--danger-color);
+    text-align: center;
+    color: var(--white-color);
+    border: none;
+    border-radius: 5px;
+    font-size: .8rem;
+    font-weight: 600;
+}
+
+.setting:hover .dropdown-content {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+@media (max-width: 442px){
+
+    .menuBar{
+        height: auto;
+        grid-template-columns: 1fr;
+        row-gap: 10px;
+        padding: 10px 0;
+    }
+
+    .logo{
+        font-size: 1.4rem;
+    }
+
+    .logo .logo_image{
+        min-width: 100px;
+        min-height: 70px;
+    }
+
+    .toolBar{
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .toolBar div.active{
+        width: 80px;
+        height: 40px;
+        font-size: 1.1rem;
+    }
+
+    .userPanel{
+        gap: 10px;
+    }
+
+    .dropdown-content{
+        width: 80px;
+        height: 80px;
+        right: 0;
+        left: auto;
+    }
+}

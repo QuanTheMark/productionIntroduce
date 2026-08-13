@@ -1,0 +1,222 @@
+
+@import "./colorRoot.css";
+
+
+.btn-customs{
+    width: 200px;
+    height: 40px;
+    margin-top: 20px;
+    border-radius: 5px;
+    background-color: var(--black-color);
+    color: var(--white-color);
+    border: none;
+    cursor: pointer;
+}
+
+
+.plate{
+    width: 50px;
+    height: 50px;
+    border-radius: 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.nike{
+    background-image: url("/src/resources/nike.png");
+}
+.adidas{
+    background-image: url("/src/resources/addias.png");
+}
+.puma{
+    background-image: url("/src/resources/pum.png");
+}
+.newBalance{
+    background-image: url("/src/resources/new%20Balance.png");
+}
+.asics{
+    background-image: url("/src/resources/acis.png");
+}
+.bitis{
+    background-image: url("/src/resources/bitis.png");
+}
+.ananas{
+    background-image: url("/src/resources/ananas.png");
+}
+
+
+.reputation{
+    width: 100%;
+    height: 200px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.reputation_content{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    border-right: var(--black-color) 1px solid;
+}
+
+
+.reputation_content:last-child{
+    border-right: none;
+}
+
+.reputation_content div:first-child{
+    width: 50px;
+    height: 50px;
+    background-color: var(--black-color);
+    border-radius: 30px;
+    color: var(--white-color);
+    position: relative;
+}
+
+.reputation_content svg{
+    position: absolute;
+    transform: scale(150%);
+    left: 15px;
+    top: 15px;
+}
+
+.reputation_content .content_text{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+}
+
+.content_text p:first-child{
+    font-size: 1.2rem;
+}
+
+.content_text p:last-child{
+    color: var(--gray-color);
+}
+
+.productionReview{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 50px;
+    padding: 5px;
+}
+
+.productionReview_text{
+    text-align: center;
+}
+
+.productionReview_text p{
+    width: 500px;
+    color: var(--gray-color);
+    opacity: 0.8;
+}
+
+
+.btnLeft, .btnRight{
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.fa-circle-arrow-left, .fa-circle-arrow-right{
+    width: 50px;
+    height: 100px;
+}
+
+.fa-user{
+    width: 30px;
+    height: 20px;
+}
+
+
+.footer, footer{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--secondary-gray-color);
+    margin-top: 20px;
+}
+
+.term{
+    display: flex;
+    gap: 20px;
+}
+
+.term div{
+    border-right: var(--black-color) 2px solid;
+}
+
+
+.term div:last-child{
+    border-right: none;
+}
+
+
+@media (max-width: 442px){
+
+    .btn-customs{
+        width: 100%;
+    }
+
+    .plate{
+        width: 40px;
+        height: 40px;
+    }
+
+    .reputation{
+        height: auto;
+        grid-template-columns: 1fr 1fr;
+        row-gap: 20px;
+    }
+
+    .reputation_content{
+        border-right: none;
+        padding: 10px 0;
+    }
+
+    .reputation_content:nth-child(odd){
+        border-right: var(--black-color) 1px solid;
+    }
+
+    .productionReview_text p{
+        width: 100%;
+        padding: 0 10px;
+    }
+
+    .fa-circle-arrow-left, .fa-circle-arrow-right{
+        width: 30px;
+        height: 60px;
+    }
+
+    .footer, footer{
+        height: auto;
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px 0;
+    }
+
+    .term{
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .term div{
+        border-right: none;
+    }
+}

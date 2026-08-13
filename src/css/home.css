@@ -1,360 +1,255 @@
+@import "./default.css";
+@import "./menuBar.css";
+@import "./template.css";
 
- @import "./default.css";
- @import "./menuBar.css";
- .explore{
-        width: 100%;
-        height: 850px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 20px;
-        padding: 5px;
-        position: relative;
+.explore{
+    width: 100%;
+    height: 850px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 5px;
+    position: relative;
+}
+
+.explore::before{
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-image: url("../resources/TheThao.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0.5;
+    z-index: -1;
+}
+
+.explore_text{
+    padding: 5px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    font-size: 1.5rem;
+    text-align: center;
+
+    h2{
+        width: 500px;
     }
 
-    .explore::before{
-        position: absolute;
-        content: "";
-        width: 100%;
-        height: 100%;
-        background-image: url("../resources/TheThao.jpg");
-        background-size: cover;
-        background-repeat: no-repeat;
-        opacity: 0.5;
-        z-index: -1;
+    p{
+        width: 600px;
+    }
+}
+
+main{
+    overflow: hidden;
+}
+
+.brands{
+    width: 100%;
+    height: 75px;
+    background-color: var(--gray-color) ;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 1.2rem;
+    font-weight: 600;
+    a{
+        text-decoration: none;
+        color: var(--black-color);
+    }
+}
+
+.onSaleProduction{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 50px;
+}
+
+.onSaleProduction_text{
+    text-align: center;
+    p{
+        width: 500px;
+        color: var(--gray-color);
+        opacity: 0.8;
+    }
+}
+
+.referentialProduction{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
+.referentialProduction_container{
+    width: 300px;
+    height: 300px;
+    border: black 2px solid;
+    border-radius: 20px ;
+    padding: 10px;
+    .price{
+        color: var(--danger-color);
+    }
+
+    .title{
+        width: 150px;
+    }
+}
+
+.production1{
+    background-image: url("/src/resources/top1.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.containerBtn{
+    width: 100px;
+    border-radius: 5px;
+    border: none;
+}
+
+.production2{
+    background-image: url("/src/resources/top2.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.production3{
+    background-image: url("/src/resources/top3.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.banners{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+}
+
+
+
+.productEvaluation{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 50px;
+}
+
+.productEvaluation_container{
+    width: 400px;
+    height: 300px;
+    background-color: aliceblue;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 20px;
+    padding: 5px;
+    margin-top: 50px;
+}
+
+.productEvaluation_container.middle{
+    background-color: var(--secondary-black-color);
+    opacity: 1;
+    transform: scale(110%);
+}
+
+.container_productionImage{
+    background-image: url("/src/resources/feedback1.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.container_reviewer{
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.reviewer_feedback{
+    border-bottom: var(--black-color) 3px solid;
+}
+
+
+.reputation{
+    margin-top: 50px;
+}
+
+@media (max-width: 442px){
+
+    .explore{
+        height: auto;
+        min-height: 500px;
+        padding: 20px 10px;
     }
 
     .explore_text{
-        padding: 5px;
-        height: 250px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-        font-size: 1.5rem;
-        text-align: center;
+        height: auto;
+        font-size: 1.1rem;
 
         h2{
-            width: 500px;
+            width: 100%;
         }
 
         p{
-            width: 600px;
+            width: 100%;
         }
     }
-
-      main{
-        overflow: hidden;
-    }
-    .btn-customs{
-        width: 200px;
-        height: 40px;
-        margin-top: 20px;
-        border-radius: 5px;
-        background-color: var(--black-color);
-        color: var(--white-color);
-        border: none;
-        cursor: pointer;
-    }
-
 
     .brands{
-        width: 100%;
-        height: 75px;
-        background-color: var(--gray-color) ;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        font-size: 1.2rem;
-        font-weight: 600;
-        a{
-            text-decoration: none;
-            color: var(--black-color);
-        }
-    }
-
-    .onSaleProduction{
-        width: 100%;
-        display: flex;
+        height: auto;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 20px;
-        margin-top: 50px;
+        gap: 10px;
+        padding: 15px 0;
+        font-size: 1rem;
     }
 
     .onSaleProduction_text{
-        text-align: center;
-        p{  
-            width: 500px;
-            color: var(--gray-color);
-            opacity: 0.8;
+        padding: 0 10px;
+        p{
+            width: 100%;
         }
     }
 
     .referentialProduction{
-        margin-top: 20px;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        width: 100%;
+        flex-direction: column;
+        gap: 20px;
     }
 
     .referentialProduction_container{
-        width: 300px;
-        height: 300px;
-        border: black 2px solid;
-        border-radius: 20px ;
-        padding: 10px;
-        .price{
-            color: var(--danger-color);
-        }
-
-        .title{
-            width: 150px;
-        }
-
-
-    }
-
-    .production1{
-        background-image: url("/src/resources/top1.png");
-        background-size: contain;
-        background-repeat: no-repeat;
-    }
-    
-    .containerBtn{
-        width: 100px;
-        border-radius: 5px;
-        border: none;
-
-    }
-
-      .production2{
-        background-image: url("/src/resources/top2.png");
-        background-size: contain;
-        background-repeat: no-repeat;
-    }
-
-      .production3{
-        background-image: url("/src/resources/top3.png");
-        background-size: contain;
-        background-repeat: no-repeat;
-    }
-
-    .banners{
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        gap: 20px;
-    }
-
-    .productionReview{
         width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 20px;
-        margin-top: 50px;
-        padding: 5px;
-    }
-
-    .productionReview_text{
-        text-align: center;
-        p{  
-            width: 500px;
-            color: var(--gray-color);
-            opacity: 0.8;
-        }
+        max-width: 300px;
     }
 
     .productEvaluation{
-        width: 100%;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        gap: 50px;
+        flex-direction: column;
+        gap: 20px;
     }
 
     .productEvaluation_container{
-        width: 400px;
-        height: 300px;
-        background-color: aliceblue;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        column-gap: 20px;
-        padding: 5px;
-        margin-top: 50px;
-        
-        
+        width: 100%;
+        max-width: 350px;
+        height: auto;
     }
 
     .productEvaluation_container.middle{
-        background-color: var(--secondary-black-color);
-        opacity: 1;
-        transform: scale(110%);
-    }
-    .container_productionImage{
-        background-image: url("/src/resources/feedback1.png");
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-
-    }
-    
-    .container_reviewer{
-        padding: 5px;
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-    }
-    .reviewer_feedback{
-        border-bottom: var(--black-color) 3px solid;
+        transform: none;
     }
 
-    .btnLeft, .btnRight{
-        border: none;
-        background-color: transparent;
-        cursor: pointer;
+    .banners{
+        flex-wrap: wrap;
+        gap: 15px;
     }
-
-    .fa-circle-arrow-left, .fa-circle-arrow-right{
-        width: 50px;
-        height: 100px;
-
-    }
-
-    .fa-user{
-        width: 30px;
-        height: 20px;
-    }
-    
-
-     .plate{
-            width: 50px;
-            height: 50px;
-            border-radius: 30px;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: contain;
-        }
-
-
-        .nike{
-            background-image: url("/src/resources/nike.png");
-     
-       
-        }
-        .adidas{
-            background-image: url("/src/resources/addias.png");
-
-       
-        }
-
-        .puma{
-            background-image: url("/src/resources/pum.png");
-    
-       
-        }
-
-        .newBalance{
-            background-image: url("/src/resources/new Balance.png");
-
-   
-        }
-
-        .asics{
-            background-image: url("/src/resources/acis.png");
-
-
-        }
-        .bitis{
-            background-image: url("/src/resources/bitis.png");
- 
-        }
-        .ananas{
-            background-image: url("/src/resources/ananas.png");
-
-
-        }
-
-        .reputation{
-            width: 100%;
-            height: 200px;
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr 1fr;
-            margin-top: 50px;
-    
-        }
-
-        .reputation_content{
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            gap: 20px;
-            border-right: var(--black-color) 1px solid;
-       
-        }
-
-
-        .reputation_content div:first-child{
-            width: 50px;
-            height: 50px;
-            background-color: var(--black-color);
-            border-radius: 30px;
-            color: var(--white-color);
-            position: relative;
-        }
-
-        .reputation_content svg{
-            position: absolute;
-            transform: scale(150%);
-            left: 15px;
-            top: 15px;
-        }
-
-        .content_text{
-            margin-top: 20px;
-        }
-
-        .reputation_content .content_text{
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            font-weight: 600;
-        }
-
-        .content_text p:first-child{
-            font-size: 1.2rem;
-        }
-
-        .content_text p:last-child{
-            color: var(--gray-color);
-        }
-
-        .footer{
-            width: 100%;
-            height: 100px;
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            background: var(--secondary-gray-color);
-            margin-top: 20px;
-          
-        }
-
-        .term{
-            display: flex;
-            gap: 20px;
-        }
-
-        .term div{
-            border-right: var(--black-color) 2px solid;
-        }
-       
+}

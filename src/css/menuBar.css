@@ -105,6 +105,7 @@
         gap: 20px;
         background-color: var(--white-color);
         border-radius: 5px;
+        filter: drop-shadow(4px 4px 8px var(--black-color));
     }
 
     .dropdown-content button{
@@ -115,7 +116,7 @@
         text-align: center;
         color: var(--white-color);
         border: none;
-        border-radius: 20px;
+        border-radius: 5px;
         font-size: .8rem;
         font-weight: 600;
 
@@ -129,119 +130,3 @@
 }
 
 
-@media screen and ( width <= 442px){
-    .menuBar{
-       display: flex;
-       justify-content: space-around;
-       align-items: center;
-    }
-
-    .toolBar{
-        display: none;
-    }
-
-    .userPanel_mobile{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 10px;
-        margin-top: 20px;
-
-    }
-    .userPanel_image{
-        background-color: var(--white-color);
-        width: 50px;
-        height: 50px;
-        border-radius: 30px;
-       
-        
-    }
-
-    .userPanel_image.active{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-       
-        
-    }
-
-    .menuBtn{
-    background-image: url("../resources/menu.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-color: black;
-    width: 50px;
-    height: 50px;
-    }
-
-    .sideBar{
-        height: 100vh;
-        width: 250px;
-        background-color: var(--white-color);
-        position: fixed;
-        top: 0;
-        right: 0;
-        display: flex;
-        flex-direction: column;
-        padding: 5px;
-        opacity: 0;
-        transform: translateX(100%);
-        transition: all 0.3s ease-in-out;
-    }
-    
-    .mobileLogout{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-top: auto;
-
-    }
-
-    .sideBar button{
-        background-color: var(--danger-color);
-        color: var(--white-color);
-        width: 90%;
-        height: 50px;
-        border-radius: 20px;
-        font-size: 1.2rem;
-        font-weight: 600;
-    }
-
-    .menuClose{
-        display: flex;
-        justify-content: flex-start;
-        align-items: flex-start;
-        width: 50px;
-        height: 50px;
-        background-image: url("../resources/close.png");
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-color: var(--danger-color);
-    }
-
-    ul{
-        width: 100%;
-        line-height: 3;
-
-    }
-
-    ul li{
-        list-style: none;
-        font-size: 1.2rem;
-        font-weight: 600;
-        border-bottom: black 2px solid;
-    
-    }
-
-    .logo{
-        font-size: 1.5rem;
-        justify-content: space-between;
-    }
-
-    .logo .logo_image{
-        min-width: 75px;
-        min-height: 50px;
-    }   
-
-}

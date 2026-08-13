@@ -71,66 +71,7 @@
             </div>
             `
         }
-}else{
-    if(userActive != null){
-        userPanel.innerHTML = 
-    `   <div class = "menuBtn"></div>
-        <div class = "sideBar">
-            <div class = "menuClose"></div>
-            <div class = "userPanel_mobile">
-                <div class = "userPanel_image active"></div>
-                <ul>
-                <li><a href = "#">Trang chủ</a></li>    
-                <li><a href = "#">Sản phẩm</a></li>
-                <li><a href = "#">Liên hệ</a></li>  
-                <li><a href = "#">Về chúng tôi</a></li>     
-                </ul>
-            </div>
-           
-            <div class = "mobileLogout">
-                <button class = "logOutBtn">Đăng xuất</button>
-            </div>
-        </div>
-    `;
-
-        const userImg = document.querySelector('.userPanel_image');
-        userImg.style.backgroundImage = `url('https://ui-avatars.com/api/?name=${encodeURIComponent(userActive.username)}&background=random')`;
-        const userLogout = document.querySelector('.logOutBtn');
-        userLogout.onclick = function(){
-            localStorage.removeItem('userActive');
-            window.location.reload();
-        }
     }
-    else{
-        userPanel.innerHTML = 
-    `   <div class = "menuBtn"></div>
-        <div class = "sideBar">
-            <div class = "menuClose"></div>
-            <div class = "userPanel_mobile">
-                <div class = "userPanel_image">
-                        <span><i class="fa-solid fa-user"></i></span>
-                </div>
-                <ul>
-                <li><a href = "/register.html">Đăng ký</a></li>    
-                <li><a href = "/login.html">Đăng nhập</a></li>   
-                </ul>
-            </div>
-        </div>
-    `;
-    }
+ }
     
-
-    const sideBar = document.querySelector('.sideBar');
-    const menuBtn = document.querySelector('.menuBtn');
-    const menuClose = document.querySelector('.menuClose');
-    menuBtn.onclick = function(){
-        sideBar.style.opacity = "1";
-        sideBar.style.transform = "translateX(0)";
-    }
     
-    menuClose.onclick = function(){
-        sideBar.style.opacity = "0";
-        sideBar.style.transform = "translateX(100%)";
-    }
-}
-    }

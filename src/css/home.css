@@ -97,6 +97,7 @@ main{
     border: black 2px solid;
     border-radius: 20px ;
     padding: 10px;
+    box-shadow: 5px 5px 10px;
     .price{
         color: var(--danger-color);
     }
@@ -145,6 +146,7 @@ main{
     justify-content: space-around;
     align-items: center;
     gap: 50px;
+
 }
 
 .productEvaluation_container{
@@ -156,6 +158,7 @@ main{
     column-gap: 20px;
     padding: 5px;
     margin-top: 50px;
+    box-shadow: 5px 5px 10px;
 }
 
 .productEvaluation_container.middle{

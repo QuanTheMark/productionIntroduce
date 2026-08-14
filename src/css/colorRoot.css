@@ -8,7 +8,8 @@
 
     --success-color: #28a745;       
     --danger-color: #dc3545;        
-    --warning-color: #ffc107;       
+    --warning-color: #ffc107;
+    --yellow-color: rgb(232, 232, 61); 
     --info-color: #17a2b8;
     --gray-color: rgb(121 111 111 / 70%);
     --secondary-black-color: rgb(96 79 79 / 37%);

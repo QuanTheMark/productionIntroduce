@@ -62,7 +62,6 @@ header > div:nth-child(2){
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-
 }
 
 .banners_image.side{
@@ -93,7 +92,6 @@ header > div:nth-child(2){
     flex-direction: column;
     gap: 20px;
 }
-
 
 .productionDetails .overAll .title{
     display: flex;
@@ -203,7 +201,6 @@ header > div:nth-child(2){
     margin-top: 50px;
     border: var(--black-color) 1px solid;
     border-radius: 5px;
-    box-shadow: 5px 5px 10px;
 }
 
 .reviewer_rate{

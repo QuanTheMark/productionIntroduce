@@ -1,0 +1,210 @@
+[
+    {
+        "id": "nike-air-force-1-07",
+        "name": "Nike Air Force 1'07",
+        "brand": "Nike",
+        "gender": "Nam",
+        "sold": 340,
+        "date": "2026-02-01",
+        "price": 3500000,
+        "image": {
+            "thumbnail": "/src/resources/sp1.png",
+            "side": "/src/resources/Frame 208.png",
+            "above": "/src/resources/Frame 217.png",
+            "behind": "/src/resources/Frame 218.png",
+            "underneath": "/src/resources/Frame 219.png"
+        }
+    },
+    {
+        "id": "adidas-superstar",
+        "name": "Adidas Superstar",
+        "brand": "Adidas",
+        "gender": "Nữ",
+        "sold": 120,
+        "date": "2026-01-15",
+        "price": 2800000,
+        "image": {
+            "thumbnail": "/src/resources/sp1.png",
+            "side": "/src/resources/Frame 208.png",
+            "above": "/src/resources/Frame 217.png",
+            "behind": "/src/resources/Frame 218.png",
+            "underneath": "/src/resources/Frame 219.png"
+        }
+    },
+    {
+        "id": "puma-suede-classic",
+        "name": "Puma Suede Classic",
+        "brand": "Puma",
+        "gender": "Nam",
+        "sold": 95,
+        "date": "2025-12-20",
+        "price": 2200000,
+        "image": {
+            "thumbnail": "/src/resources/sp1.png",
+            "side": "/src/resources/Frame 208.png",
+            "above": "/src/resources/Frame 217.png",
+            "behind": "/src/resources/Frame 218.png",
+            "underneath": "/src/resources/Frame 219.png"
+        }
+    },
+    {
+        "id": "new-balance-550",
+        "name": "New Balance 550",
+        "brand": "New balance",
+        "gender": "Nam",
+        "sold": 410,
+        "date": "2026-02-10",
+        "price": 3100000,
+        "image": {
+            "thumbnail": "/src/resources/sp1.png",
+            "side": "/src/resources/Frame 208.png",
+            "above": "/src/resources/Frame 217.png",
+            "behind": "/src/resources/Frame 218.png",
+            "underneath": "/src/resources/Frame 219.png"
+        }
+    },
+    {
+        "id": "asics-gel-kayano-14",
+        "name": "Asics Gel-Kayano 14",
+        "brand": "Asics",
+        "gender": "Nam",
+        "sold": 60,
+        "date": "2026-02-14",
+        "price": 3900000,
+        "image": {
+            "thumbnail": "/src/resources/sp1.png",
+            "side": "/src/resources/Frame 208.png",
+            "above": "/src/resources/Frame 217.png",
+            "behind": "/src/resources/Frame 218.png",
+            "underneath": "/src/resources/Frame 219.png"
+        }
+    },
+    {
+        "id": "bitis-hunter-x",
+        "name": "Biti's Hunter X",
+        "brand": "Biti's",
+        "gender": "Nam",
+        "sold": 280,
+        "date": "2026-01-05",
+        "price": 900000,
+        "image": {
+            "thumbnail": "/src/resources/sp1.png",
+            "side": "/src/resources/Frame 208.png",
+            "above": "/src/resources/Frame 217.png",
+            "behind": "/src/resources/Frame 218.png",
+            "underneath": "/src/resources/Frame 219.png"
+        }
+    },
+    {
+        "id": "ananas-basic-canvas",
+        "name": "Ananas Basic Canvas",
+        "brand": "Ananas",
+        "gender": "Nữ",
+        "sold": 190,
+        "date": "2025-11-30",
+        "price": 650000,
+        "image": {
+            "thumbnail": "/src/resources/sp1.png",
+            "side": "/src/resources/Frame 208.png",
+            "above": "/src/resources/Frame 217.png",
+            "behind": "/src/resources/Frame 218.png",
+            "underneath": "/src/resources/Frame 219.png"
+        }
+    },
+    {
+        "id": "nike-dunk-low",
+        "name": "Nike Dunk Low",
+        "brand": "Nike",
+        "gender": "Nữ",
+        "sold": 520,
+        "date": "2026-02-08",
+        "price": 3200000,
+        "image": {
+            "thumbnail": "/src/resources/sp1.png",
+            "side": "/src/resources/Frame 208.png",
+            "above": "/src/resources/Frame 217.png",
+            "behind": "/src/resources/Frame 218.png",
+            "underneath": "/src/resources/Frame 219.png"
+        }
+    },
+    {
+        "id": "adidas-samba-og",
+        "name": "Adidas Samba OG",
+        "brand": "Adidas",
+        "gender": "Nam",
+        "sold": 480,
+        "date": "2026-01-20",
+        "price": 2600000,
+        "image": {
+            "thumbnail": "/src/resources/sp1.png",
+            "side": "/src/resources/Frame 208.png",
+            "above": "/src/resources/Frame 217.png",
+            "behind": "/src/resources/Frame 218.png",
+            "underneath": "/src/resources/Frame 219.png"
+        }
+    },
+    {
+        "id": "puma-rs-x",
+        "name": "Puma RS-X",
+        "brand": "Puma",
+        "gender": "Nam",
+        "sold": 75,
+        "date": "2025-10-15",
+        "price": 2400000,
+        "image": {
+            "thumbnail": "/src/resources/sp1.png",
+            "side": "/src/resources/Frame 208.png",
+            "above": "/src/resources/Frame 217.png",
+            "behind": "/src/resources/Frame 218.png",
+            "underneath": "/src/resources/Frame 219.png"
+        }
+    },
+    {
+        "id": "new-balance-990v5",
+        "name": "New Balance 990v5",
+        "brand": "New balance",
+        "gender": "Nam",
+        "sold": 150,
+        "date": "2026-02-12",
+        "price": 4200000,
+        "image": {
+            "thumbnail": "/src/resources/sp1.png",
+            "side": "/src/resources/Frame 208.png",
+            "above": "/src/resources/Frame 217.png",
+            "behind": "/src/resources/Frame 218.png",
+            "underneath": "/src/resources/Frame 219.png"
+        }
+    },
+    {
+        "id": "asics-gel-1130",
+        "name": "Asics Gel-1130",
+        "brand": "Asics",
+        "gender": "Nữ",
+        "sold": 110,
+        "date": "2026-01-10",
+        "price": 2900000,
+        "image": {
+            "thumbnail": "/src/resources/sp1.png",
+            "side": "/src/resources/Frame 208.png",
+            "above": "/src/resources/Frame 217.png",
+            "behind": "/src/resources/Frame 218.png",
+            "underneath": "/src/resources/Frame 219.png"
+        }
+    },
+    {
+        "id": "bitis-hunter-street",
+        "name": "Biti's Hunter Street",
+        "brand": "Biti's",
+        "gender": "Nữ",
+        "sold": 310,
+        "date": "2025-12-05",
+        "price": 850000,
+        "image": {
+            "thumbnail": "/src/resources/sp1.png",
+            "side": "/src/resources/Frame 208.png",
+            "above": "/src/resources/Frame 217.png",
+            "behind": "/src/resources/Frame 218.png",
+            "underneath": "/src/resources/Frame 219.png"
+        }
+    }
+]

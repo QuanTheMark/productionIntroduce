@@ -115,13 +115,6 @@
     opacity: 0.9;
 }
 
-.memberCard_hint{
-    font-size: 0.85rem;
-    color: var(--gray-color);
-    opacity: 0.7;
-    font-style: italic;
-}
-
 .memberCard_socials{
     display: flex;
     gap: 15px;

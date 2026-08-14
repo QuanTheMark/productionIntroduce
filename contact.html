@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liên hệ chúng tôi</title>
+
+    <link rel="stylesheet" href="src/css/contact.css">
+</head>
+<body>
+
+    <header class  = "menuBar">
+            <div class = "logo">
+                <div clas = "logo_image"></div>
+                <span><b>Abydas</b></span>
+            </div>
+            <div class = "toolBar">
+                <div>
+                    <a href="index.html">Trang chủ</a>
+              
+                </div>
+                <div>
+                    <a href="production.html">Sản phẩm</a>
+    
+                 </div>
+
+                <div>
+                    <a href="contact.html">Liên hệ</a>
+
+                </div>
+
+                <div>
+                    <a href="aboutUs.html">Về chúng tôi</a>
+
+                </div>
+            </div>
+            <div class = "userPanel"></div>
+    </header>  
+
+    <main>
+        <section class="contactUs">
+
+            <div class="contactUs_intro">
+                <h1>Liên hệ với chúng tôi</h1>
+                <p>Bạn có câu hỏi về sản phẩm, đơn hàng hoặc cần hỗ trợ? Hãy để lại lời nhắn, đội ngũ của chúng tôi sẽ phản hồi trong thời gian sớm nhất.</p>
+            </div>
+
+            <div class="contactUs_content">
+
+                <div class="contactInfo">
+                    <div class="contactInfo_item">
+                        <div class="contactInfo_icon">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <div class="contactInfo_text">
+                            <p class="contactInfo_label">Địa chỉ</p>
+                            <p>Số 12 Nguyễn Văn Bảo, Phường Hạnh Thông, TP. Hồ Chí Minh.</p>
+                        </div>
+                    </div>
+
+                    <div class="contactInfo_item">
+                        <div class="contactInfo_icon">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+                        <div class="contactInfo_text">
+                            <p class="contactInfo_label">Điện thoại</p>
+                            <p>0123 456 789</p>
+                        </div>
+                    </div>
+
+                    <div class="contactInfo_item">
+                        <div class="contactInfo_icon">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <div class="contactInfo_text">
+                            <p class="contactInfo_label">Email</p>
+                            <p>Abydas@shop.com</p>
+                        </div>
+                    </div>
+
+                    <div class="contactInfo_item">
+                        <div class="contactInfo_icon">
+                            <i class="fa-solid fa-clock"></i>
+                        </div>
+                        <div class="contactInfo_text">
+                            <p class="contactInfo_label">Giờ làm việc</p>
+                            <p>Thứ 2 - Thứ 7: 8:00 - 21:00</p>
+                        </div>
+                    </div>
+                </div>
+
+                <form class="contactForm">
+                    <div class="formGroup formGroup-row">
+                        <div class="formGroup">
+                            <label for="fullName">Họ và tên</label>
+                            <input type="text" id="fullName" name="fullName" placeholder="Nhập họ và tên" required>
+                        </div>
+                        <div class="formGroup">
+                            <label for="phone">Số điện thoại</label>
+                            <input type="tel" id="phone" name="phone" placeholder="Nhập số điện thoại" required>
+                        </div>
+                    </div>
+
+                    <div class="formGroup">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Nhập địa chỉ email" required>
+                    </div>
+
+                    <div class="formGroup">
+                        <label for="subject">Chủ đề</label>
+                        <input type="text" id="subject" name="subject" placeholder="Chủ đề bạn muốn liên hệ">
+                    </div>
+
+                    <div class="formGroup">
+                        <label for="message">Nội dung</label>
+                        <textarea id="message" name="message" placeholder="Nhập nội dung cần hỗ trợ" required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-customs">Gửi liên hệ</button>
+                </form>
+
+            </div>
+
+            <div class="mapEmbed">
+                <iframe
+                    src="https://www.google.com/maps?q=Nguyen%20Hue%2C%20Quan%201%2C%20TP.HCM&output=embed"
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+
+        </section>
+    </main>
+
+       <section class = "footer">
+          <div class = "logo">
+                    <div class ="logo_image"></div>
+                    <h2>Abydas</h2>
+                </div>
+
+                <div>
+                    <p>Copyright &copy; 2026 <b>Abydas</b>. All rights reserved.</p>
+                </div>
+
+                <div class ="term">
+                    <a href="/privatePolicy.html">Chính sách bảo mật</a>
+                    <div></div>
+                    <a href="/terms.html">Điều khoản sử dụng</a>
+            </div>
+    </section>
+</body>
+
+    <script src="/src/js/pageRender.js"></script>
+    <script src="https://kit.fontawesome.com/cebfc5049a.js" crossorigin="anonymous"></script>
+
+</body>
+</html>

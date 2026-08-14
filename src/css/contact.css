@@ -1,0 +1,185 @@
+@import "./default.css";
+@import "./menuBar.css";
+@import "./template.css";
+
+
+.contactUs{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 50px 20px;
+}
+
+.contactUs_intro{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+.contactUs_intro p{
+    width: 600px;
+    color: var(--gray-color);
+    opacity: 0.8;
+}
+
+.contactUs_content{
+    width: 100%;
+    max-width: 1100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 50px;
+    margin-top: 30px;
+}
+
+
+.contactInfo{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 350px;
+    flex-shrink: 0;
+}
+
+.contactInfo_item{
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.contactInfo_icon{
+    width: 45px;
+    height: 45px;
+    min-width: 45px;
+    border-radius: 30px;
+    background-color: var(--black-color);
+    color: var(--white-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contactInfo_text{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.contactInfo_label{
+    font-weight: 600;
+}
+
+.contactInfo_text p:last-child{
+    color: var(--gray-color);
+}
+
+
+.contactForm{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contactForm .formGroup{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.contactForm .formGroup.formGroup-row{
+    flex-direction: row;
+    gap: 20px;
+}
+
+.contactForm .formGroup-row .formGroup{
+    flex: 1;
+}
+
+.contactForm label{
+    font-weight: 500;
+    color: var(--black-color);
+}
+
+.contactForm input,
+.contactForm textarea{
+    width: 100%;
+    padding: 12px 15px;
+    border: var(--secondary-gray-color) 1px solid;
+    border-radius: 8px;
+    outline: none;
+    font-size: 14px;
+
+}
+
+.contactForm input:focus,
+.contactForm textarea:focus{
+    border: var(--success-color) 2px solid;
+}
+
+.contactForm textarea{
+    min-height: 150px;
+    resize: vertical;
+}
+
+.contactForm .btn-customs{
+    width: 200px;
+    align-self: flex-start;
+}
+
+.mapEmbed{
+    width: 100%;
+    max-width: 1100px;
+    height: 350px;
+    margin-top: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.mapEmbed iframe{
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+
+
+@media (max-width: 442px){
+
+    .contactUs{
+        padding: 30px 10px;
+        gap: 15px;
+    }
+
+    .contactUs_intro p{
+        width: 100%;
+    }
+
+    .contactUs_content{
+        flex-direction: column;
+        gap: 30px;
+        margin-top: 20px;
+    }
+
+    .contactInfo{
+        width: 100%;
+    }
+
+    .contactForm .formGroup-row{
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .contactForm .btn-customs{
+        width: 100%;
+        align-self: stretch;
+    }
+
+    .mapEmbed{
+        height: 220px;
+    }
+}

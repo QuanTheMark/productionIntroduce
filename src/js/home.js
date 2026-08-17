@@ -218,8 +218,8 @@
             });
     }       
 
-
-    renderProducts();
+// Gọi hàm để thực thi
+renderProducts();
 
 
 

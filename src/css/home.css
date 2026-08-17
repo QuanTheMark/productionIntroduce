@@ -105,10 +105,15 @@ main{
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
+    box-shadow: 1px 1px 5px;
+    transition: all 0.3s ease;
+
+
+}
+
+.referentialProduction_container:hover{
+    transform: translateY(-10px);
     box-shadow: 5px 5px 10px;
-   
-
-
 }
 
 .referentialProduction_container  .price{
@@ -152,7 +157,10 @@ main{
     column-gap: 20px;
     padding: 5px;
     margin-top: 50px;
+    box-shadow: 5px 5px 10px;
 }
+
+
 
 .productEvaluation_container.middle{
     background-color: var(--secondary-black-color);

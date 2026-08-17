@@ -1,73 +1,113 @@
 const PRODUCTS_PER_PAGE = 9;
 
-let allProducts = [];       // Lưu toàn bộ sản phẩm gốc từ JSON
-let filteredProducts = [];  // Lưu sản phẩm sau khi đã lọc/sắp xếp
+let allProducts = [];
+let filteredProducts = [];
 let currentPage = 1;
 
-// Các biến lưu trạng thái bộ lọc đang chọn
-let selectedBrand = "Tất cả";
-let selectedGenders = [];
-let selectedSort = "";
+// State hiện tại của form (chỉ cập nhật khi nhấn "Xem kết quả")
+let currentFilters = {
+    brand: "Tất cả",
+    genders: [],
+    sort: ""
+};
+
+// State tạm thời trên UI (người dùng đang chọn nhưng chưa áp dụng)
+let tempFilters = {
+    brand: "Tất cả",
+    genders: [],
+    sort: ""
+};
 
 // Lấy dữ liệu từ file JSON
 async function fetchProducts() {
-    const response = await fetch("/products.json");
-    if (!response.ok) {
-        throw new Error("Không thể tải dữ liệu sản phẩm.");
+    try {
+        const response = await fetch("/products.json");
+        if (!response.ok) {
+            throw new Error("Không thể tải dữ liệu sản phẩm.");
+        }
+        const data = await response.json();
+        return Array.isArray(data) ? data : (data.products || []);
+    } catch (error) {
+        console.error("Lỗi fetchProducts:", error);
+        return [];
     }
-    const data = await response.json();
-    // Đảm bảo trả về mảng dù JSON có cấu trúc nào
-    return Array.isArray(data) ? data : (data.products || []);
 }
 
+// Đọc giá trị từ form (lấy những gì người dùng đang chọn trên UI)
+function readFormValues() {
+    const brandButtons = document.querySelectorAll(".listBox .searchBtn button");
+    const genderCheckboxes = document.querySelectorAll('.genderChoice input[name="gender"]');
+    const sortRadios = document.querySelectorAll('.priceSelector input[name="price"]');
+    
+    // Đọc thương hiệu từ nút active
+    const activeBrand = Array.from(brandButtons).find(btn => btn.classList.contains("active"));
+    tempFilters.brand = activeBrand ? activeBrand.textContent.trim() : "Tất cả";
+    
+    // Đọc giới tính từ checkbox
+    tempFilters.genders = Array.from(genderCheckboxes)
+        .filter(cb => cb.checked)
+        .map(cb => cb.id === "male" ? "Nam" : "Nữ");
+    
+    // Đọc sắp xếp từ radio
+    const activeSort = Array.from(sortRadios).find(radio => radio.checked);
+    tempFilters.sort = activeSort ? activeSort.id : "";
+}
 
+// Áp dụng bộ lọc (chỉ gọi khi nhấn "Xem kết quả")
 function applyFilter() {
-    // Lấy danh sách giới tính đang check
-    selectedGenders = Array.from(genderCheckboxes)
-        .filter(i => i.checked)
-        .map(i => i.id === "male" ? "Nam" : "Nữ");
-    // Lấy trạng thái sắp xếp đang check
-    const activeSort = Array.from(sortRadios).find(i => i.checked);
-    selectedSort = activeSort ? activeSort.id : "";
-    // Tiến hành lọc mảng dữ liệu gốc
+    // Đọc giá trị từ form
+    readFormValues();
+    
+    // Cập nhật state hiện tại
+    currentFilters = {
+        brand: tempFilters.brand,
+        genders: [...tempFilters.genders],
+        sort: tempFilters.sort
+    };
+    
+    console.log("Áp dụng bộ lọc:", currentFilters);
+    
+    // Lọc sản phẩm
     filteredProducts = allProducts.filter(product => {
-        // Lọc thương hiệu (so sánh không phân biệt chữ hoa/thường)
-        const matchBrand = (selectedBrand === "Tất cả") || 
-                           (product.brand && product.brand.toLowerCase() === selectedBrand.toLowerCase());
+        // Lọc theo thương hiệu
+        const matchBrand = (currentFilters.brand === "Tất cả") || 
+                           (product.brand && product.brand.toLowerCase() === currentFilters.brand.toLowerCase());
         
-        // Lọc giới tính
-        const matchGender = (selectedGenders.length === 0) || 
-                            (product.gender && selectedGenders.includes(product.gender));
+        // Lọc theo giới tính
+        const matchGender = (currentFilters.genders.length === 0) || 
+                            (product.gender && currentFilters.genders.includes(product.gender));
+        
         return matchBrand && matchGender;
     });
-    // Tiến hành sắp xếp (Sort) theo dữ liệu JSON mới của bạn
-    if (selectedSort === "lowToHigh") {
-        filteredProducts.sort((a, b) => a.price - b.price); // Giá thấp đến cao
-    } else if (selectedSort === "highToLow") {
-        filteredProducts.sort((a, b) => b.price - a.price); // Giá cao đến thấp
-    } else if (selectedSort === "new") {
-        // Sửa lỗi: Chuyển đổi chuỗi ngày "YYYY-MM-DD" thành mốc thời gian để so sánh chính xác
-        filteredProducts.sort((a, b) => new Date(b.date) - new Date(a.date)); 
-    } else if (selectedSort === "onSale") {
-        // Lọc theo độ Hot dựa trên trường số lượng đã bán (sold)
+    
+    // Sắp xếp
+    if (currentFilters.sort === "lowToHigh") {
+        filteredProducts.sort((a, b) => a.price - b.price);
+    } else if (currentFilters.sort === "highToLow") {
+        filteredProducts.sort((a, b) => b.price - a.price);
+    } else if (currentFilters.sort === "new") {
+        filteredProducts.sort((a, b) => new Date(b.date) - new Date(a.date));
+    } else if (currentFilters.sort === "onSale") {
         filteredProducts.sort((a, b) => (b.sold || 0) - (a.sold || 0));
     }
-    // Đưa về trang 1 với danh sách sản phẩm mới đã lọc
+    
+    // Về trang 1 và render
     goToPage(1);
 }
 
-
+// Format giá tiền
 function formatPrice(price) {
     return (price || 0).toLocaleString("vi-VN") + " VNĐ";
 }
 
+// Tạo card sản phẩm
 function createProductCard(product) {
     const boxContent = document.createElement("div");
     boxContent.className = "boxContent";
 
     boxContent.innerHTML = `
         <div class="boxContent_image" style="background-image: url('${product.image?.thumbnail || ''}')"></div>
-        <h3>${product.name}</h3>
+        <h3>${product.name || 'Sản phẩm'}</h3>
         <p>Lifestyle</p>
         <p><b>${formatPrice(product.price)}</b></p>
         <div class="boxContent_buy">
@@ -83,6 +123,7 @@ function createProductCard(product) {
     return boxContent;
 }
 
+// Render sản phẩm
 function renderProducts(productsOfPage) {
     const boxWrapper = document.querySelector(".boxWrapper");
     if (!boxWrapper) return;
@@ -95,15 +136,18 @@ function renderProducts(productsOfPage) {
     boxWrapper.appendChild(fragment);
 }
 
+// Lấy sản phẩm theo trang
 function getProductsOfPage(products, page) {
     const startIndex = (page - 1) * PRODUCTS_PER_PAGE;
     return products.slice(startIndex, startIndex + PRODUCTS_PER_PAGE);
 }
 
+// Tính tổng số trang
 function getTotalPages(products) {
     return Math.max(1, Math.ceil(products.length / PRODUCTS_PER_PAGE));
 }
 
+// Tạo danh sách số trang
 function getPageNumberList(totalPages, currentPage) {
     const delta = 1;
     const pageNumbers = [];
@@ -120,17 +164,20 @@ function getPageNumberList(totalPages, currentPage) {
     return pageNumbers;
 }
 
+// Render phân trang
 function renderPagination(totalPages, currentPage) {
     const paginationFooter = document.querySelector(".content footer");
     if (!paginationFooter) return;
     paginationFooter.innerHTML = "";
 
+    // Nút Previous
     const prevButton = document.createElement("button");
     prevButton.innerHTML = `<i class="fa-solid fa-caret-left"></i>`;
     prevButton.disabled = currentPage === 1;
     prevButton.addEventListener("click", () => goToPage(currentPage - 1));
     paginationFooter.appendChild(prevButton);
 
+    // Các số trang
     getPageNumberList(totalPages, currentPage).forEach((item) => {
         const pageButton = document.createElement("button");
         if (item === "...") {
@@ -144,6 +191,7 @@ function renderPagination(totalPages, currentPage) {
         paginationFooter.appendChild(pageButton);
     });
 
+    // Nút Next
     const nextButton = document.createElement("button");
     nextButton.innerHTML = `<i class="fa-solid fa-caret-right"></i>`;
     nextButton.disabled = currentPage === totalPages;
@@ -151,110 +199,111 @@ function renderPagination(totalPages, currentPage) {
     paginationFooter.appendChild(nextButton);
 }
 
+// Đi đến trang
 function goToPage(page) {
     currentPage = page;
     renderProducts(getProductsOfPage(filteredProducts, currentPage));
     renderPagination(getTotalPages(filteredProducts), currentPage);
-    window.scrollTo({ behavior: "smooth" });
+    window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
+// Reset form về trạng thái mặc định
+function resetForm() {
+    const brandButtons = document.querySelectorAll(".listBox .searchBtn button");
+    const genderCheckboxes = document.querySelectorAll('.genderChoice input[name="gender"]');
+    const sortRadios = document.querySelectorAll('.priceSelector input[name="price"]');
+    
+    // Reset brand buttons
+    brandButtons.forEach(btn => btn.classList.remove("active"));
+    const btnAll = Array.from(brandButtons).find(b => b.textContent.trim() === "Tất cả");
+    if (btnAll) btnAll.classList.add("active");
+    
+    // Reset checkboxes
+    genderCheckboxes.forEach(cb => cb.checked = false);
+    
+    // Reset radios
+    sortRadios.forEach(radio => radio.checked = false);
+    
+    // Reset state
+    tempFilters = {
+        brand: "Tất cả",
+        genders: [],
+        sort: ""
+    };
+    
+    currentFilters = {
+        brand: "Tất cả",
+        genders: [],
+        sort: ""
+    };
+    
+    // Hiển thị tất cả sản phẩm
+    filteredProducts = [...allProducts];
+    goToPage(1);
+}
 
+// Khởi tạo sự kiện cho form
 function initFilterLogic() {
     const brandButtons = document.querySelectorAll(".listBox .searchBtn button");
     const genderCheckboxes = document.querySelectorAll('.genderChoice input[name="gender"]');
     const sortRadios = document.querySelectorAll('.priceSelector input[name="price"]');
-    const btnResult = document.querySelector("button.result");
+    const btnResult = document.querySelector(".result");
     const btnClearAll = document.querySelector(".toolBox button");
 
-    // Xử lý click chọn thương hiệu và thêm class active
+    // 1. Xử lý click thương hiệu - CHỈ CẬP NHẬT UI
     brandButtons.forEach(btn => {
         btn.addEventListener("click", () => {
-            // Xóa class active của tất cả các nút thương hiệu trước đó
+            // Nếu đang active thì bỏ qua
+            if (btn.classList.contains("active")) return;
+            
+            // Xóa active của tất cả, active cho nút được click
             brandButtons.forEach(b => b.classList.remove("active"));
-            
-            // Thêm class active vào nút vừa được bấm
             btn.classList.add("active");
-            
-            // Cập nhật giá trị thương hiệu được chọn
-            selectedBrand = btn.textContent.trim();
         });
     });
 
-    // Hàm áp dụng bộ lọc (giữ nguyên logic của bạn)
-    function applyFilter() {
-        selectedGenders = Array.from(genderCheckboxes)
-            .filter(i => i.checked)
-            .map(i => i.id === "male" ? "Nam" : "Nữ");
+    // 2. Xử lý change checkbox - CHỈ CẬP NHẬT UI (tự động)
+    // Không cần thêm event listener vì checkbox tự thay đổi khi click
 
-        const activeSort = Array.from(sortRadios).find(i => i.checked);
-        selectedSort = activeSort ? activeSort.id : "";
+    // 3. Xử lý change radio - CHỈ CẬP NHẬT UI (tự động)
+    // Không cần thêm event listener vì radio tự thay đổi khi click
 
-        filteredProducts = allProducts.filter(product => {
-            const matchBrand = (selectedBrand === "Tất cả") || 
-                               (product.brand && product.brand.toLowerCase() === selectedBrand.toLowerCase());
-            const matchGender = (selectedGenders.length === 0) || 
-                                (product.gender && selectedGenders.includes(product.gender));
-            return matchBrand && matchGender;
-        });
-
-        if (selectedSort === "lowToHigh") {
-            filteredProducts.sort((a, b) => a.price - b.price);
-        } else if (selectedSort === "highToLow") {
-            filteredProducts.sort((a, b) => b.price - a.price);
-        } else if (selectedSort === "new") {
-            filteredProducts.sort((a, b) => b.id - a.id); 
-        } else if (selectedSort === "onSale") {
-            filteredProducts.sort((a, b) => (b.sold || 0) - (a.sold || 0));
-        }
-
-        goToPage(1);
-    }
-
+    // 4. Nút "Xem kết quả" - ÁP DỤNG BỘ LỌC
     if (btnResult) {
         btnResult.addEventListener("click", applyFilter);
     }
 
-    // Khi bấm "Xóa tất cả" -> đưa nút active quay về "Tất cả"
+    // 5. Nút "Xóa tất cả" - RESET FORM
     if (btnClearAll) {
-        btnClearAll.addEventListener("click", () => {
-            brandButtons.forEach(b => b.classList.remove("active"));
-            
-            // Tìm nút "Tất cả" và gán lại class active
-            const btnAll = Array.from(brandButtons).find(b => b.textContent.trim() === "Tất cả");
-            if (btnAll) btnAll.classList.add("active");
-            
-            selectedBrand = "Tất cả";
-            genderCheckboxes.forEach(i => i.checked = false);
-            sortRadios.forEach(i => i.checked = false);
-
-            filteredProducts = [...allProducts];
-            goToPage(1);
-        });
+        btnClearAll.addEventListener("click", resetForm);
     }
 }
 
-
-// Khởi tạo trang khi tải xong
+// Khởi tạo trang
 async function initProductPage() {
     try {
+        // Load dữ liệu
         allProducts = await fetchProducts();
-        filteredProducts = [...allProducts]; 
+        filteredProducts = [...allProducts];
         
-        // Kích hoạt bộ lắng nghe sự kiện
-        initFilterLogic();
-        
-        // TỰ ĐỘNG THÊM ACTIVE CHO NÚT "TẤT CẢ" KHI TẢI TRANG
+        // Set UI mặc định: active "Tất cả"
         const brandButtons = document.querySelectorAll(".listBox .searchBtn button");
         const btnAll = Array.from(brandButtons).find(b => b.textContent.trim() === "Tất cả");
         if (btnAll) {
+            brandButtons.forEach(b => b.classList.remove("active"));
             btnAll.classList.add("active");
         }
         
-        // Hiển thị trang sản phẩm đầu tiên
+        // Khởi tạo logic
+        initFilterLogic();
+        
+        // Hiển thị trang đầu tiên
         goToPage(1);
+        
     } catch (error) {
-        console.error("Lỗi khởi tạo danh sách sản phẩm:", error);
+        console.error("Lỗi khởi tạo:", error);
     }
 }
 
+// Chạy khi DOM loaded
 document.addEventListener("DOMContentLoaded", initProductPage);

@@ -62,22 +62,6 @@ header > div:nth-child(2){
     background-repeat: no-repeat;
 }
 
-.banners_image.side{
-    background-image: url("/src/resources/Frame 208.png");
-}
-
-.banners_image.above{
-    background-image: url("/src/resources/Frame 217.png");
-}
-
-.banners_image.behind{
-    background-image: url("/src/resources/Frame 218.png");
-}
-
-.banners_image.underneath{
-    background-image: url("/src/resources/Frame 219.png");
-}
-
 .productionDetails{
     background-color: var(--secondary-gray-color);
     display: flex;
@@ -132,6 +116,12 @@ header > div:nth-child(2){
     align-items: center;
     gap: 10px;
     font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.productionDetails .order button:hover{
+    transform: translateY(-5px);
+    box-shadow: 5px 5px 5px;
 }
 
 .productionDetails .sizePicker{
@@ -200,6 +190,7 @@ header > div:nth-child(2){
     margin-top: 50px;
     border: var(--black-color) 1px solid;
     border-radius: 5px;
+    box-shadow: 5px 5px 10px;
 }
 
 .reviewer_rate{

@@ -2,7 +2,7 @@ const usernameInput         = document.getElementById('username');
 const emailInput            = document.getElementById('email');
 const passwordInput         = document.getElementById('password');
 const confirmPasswordInput  = document.getElementById('confirmPassword');
-
+const USER_INTIAL_WALLET = 10000000;
 
 const registerBtn = document.querySelector('.confirmBtn');
 
@@ -70,7 +70,7 @@ registerBtn.addEventListener('click', function(){
         username: username,
         userEmail: email,
         userPassword: password,
-        userWallet: 0
+        userWallet: USER_INTIAL_WALLET
         }
 
     userList.push(user);
@@ -79,7 +79,7 @@ registerBtn.addEventListener('click', function(){
 
     const userActive = {
         username: username,
-        userWallet: 0,
+        userWallet: USER_INTIAL_WALLET,
         state: 'active'
     }
 

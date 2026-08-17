@@ -18,6 +18,14 @@
     font-size: 1.2rem;
 }
 
+.menuBar a:hover{
+    background-color: var(--gray-color);
+    font-size: 1.5rem;
+    font-weight: 600;
+    border-radius: 5px;
+    
+}
+
 .toolBar div.active{
     width: 100px;
     height: 50px;

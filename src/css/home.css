@@ -76,19 +76,24 @@ main{
 
 .onSaleProduction_text{
     text-align: center;
-    p{
+ 
+}
+
+.onSaleProduction_text  p{
         width: 500px;
         color: var(--gray-color);
         opacity: 0.8;
     }
-}
+
 
 .referentialProduction{
+    padding: 20px;
     margin-top: 20px;
     display: flex;
     justify-content: space-around;
     align-items: center;
     width: 100%;
+
 }
 
 .referentialProduction_container{
@@ -97,20 +102,23 @@ main{
     border: black 2px solid;
     border-radius: 20px ;
     padding: 10px;
-    .price{
-        color: var(--danger-color);
-    }
-
-    .title{
-        width: 150px;
-    }
-}
-
-.production1{
-    background-image: url("/src/resources/top1.png");
     background-size: contain;
+    background-position: center;
     background-repeat: no-repeat;
+    box-shadow: 5px 5px 10px;
+   
+
+
 }
+
+.referentialProduction_container  .price{
+       color: var(--danger-color);
+   }
+
+.referentialProduction_container .title{
+       width: 150px;
+   }
+
 
 .containerBtn{
     width: 100px;
@@ -118,17 +126,6 @@ main{
     border: none;
 }
 
-.production2{
-    background-image: url("/src/resources/top2.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-}
-
-.production3{
-    background-image: url("/src/resources/top3.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-}
 
 .banners{
     display: flex;

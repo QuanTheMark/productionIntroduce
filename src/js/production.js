@@ -158,7 +158,6 @@ function goToPage(page) {
     window.scrollTo({ behavior: "smooth" });
 }
 
-//xử lý dữ liệu lọc
 
 function initFilterLogic() {
     const brandButtons = document.querySelectorAll(".listBox .searchBtn button");

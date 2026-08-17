@@ -23,34 +23,7 @@
                 <p>Khám phá những đôi Sneakers được yêu thích nhất và dẫn đầu xu hướng trong năm 2026.</p>
             </div>
 
-            <div class = "referentialProduction">
-                <div class="referentialProduction_container production1">
-                    <div class = "container_information">
-                        <div class = "order"><h1>01</h1></div>
-                        <div class = "title"><h2>Nike Air Force 1<sup>'</sup>07</h2></div>
-                        <div class = "price"><h3>3.500.000</h3></div>
-                        <button class = "containerBtn btn-customs">Xem chi tiết</button>
-                    </div>
-                </div>
-
-                <div class="referentialProduction_container production2">
-                    <div class = "container_information">
-                        <div class = "order"><h1>02</h1></div>
-                        <div class = "title"><h2> Adidas Samba OG</h2></div>
-                        <div class = "price"><h3>3.500.000</h3></div>
-                        <button class = "containerBtn btn-customs">Xem chi tiết</button>
-                    </div>
-                </div>
-
-                <div class="referentialProduction_container production3">
-                    <div class = "container_information">
-                        <div class = "order"><h1>03</h1></div>
-                        <div class = "title"><h2>New Balance 550</h2></div>
-                        <div class = "price"><h3>3.500.000</h3></div>
-                        <button class = "containerBtn btn-customs">Xem chi tiết</button>
-                    </div>
-                </div>
-            </div>
+            <div class = "referentialProduction"></div>
         </section>
         <section class = "productionReview">
             <div class = "productionReview_text">
@@ -191,4 +164,63 @@
             behavior: "smooth"
         })
        }
+
+
+
+    
+    function formatPrice(price) {
+    return (price || 0).toLocaleString("vi-VN") + " VNĐ";
+    }
+
+    async function fetchProducts() {
+        const response = await fetch("/products.json");
+        if (!response.ok) {
+            throw new Error("Không thể tải dữ liệu sản phẩm.");
+        }
+        const data = await response.json();
+        return Array.isArray(data) ? data : (data.products || []);
+    }
+
+    async function renderProducts() {
+        const referentialProduction = document.querySelector(".referentialProduction");
+        if (!referentialProduction) return;
+    
+        const products = await fetchProducts();
+        const limitedProducts = products.slice(0, 3);
+    
+        // 1. Tạo chuỗi HTML tích lũy cho toàn bộ sản phẩm
+        let referentialProductionContent = "";
+        limitedProducts.forEach(product => {
+            referentialProductionContent += `
+                <div class="referentialProduction_container" style="background-image: url('${product.image?.thumbnail || ''}')">
+                     <div class="container_information">
+                        <div class="title"><h2>${product.name}</h2></div>
+                        <div class="price"><h3>${formatPrice(product.price)}</h3></div>
+                        <button class="containerBtn btn-customs" data-product-id="${product.id}">Xem chi tiết</button>
+                    </div>
+                </div>
+            `;
+    });
+
+    // 2. Chèn toàn bộ danh sách vào DOM một lần duy nhất
+         referentialProduction.innerHTML = referentialProductionContent;
+
+         // 3. Ủy quyền sự kiện: Chỉ lắng nghe duy nhất tại thẻ cha referentialProduction
+         referentialProduction.addEventListener("click", (event) => {
+             // Tìm xem phần tử được click có phải là nút containerBtn hay không
+             const btn = event.target.closest(".containerBtn");
+
+             if (btn) {
+                 // Lấy ID sản phẩm trực tiếp từ thuộc tính dữ liệu của nút đó
+                 const productId = btn.dataset.productId;
+                 window.location.href = `/productionDetail.html?id=${encodeURIComponent(productId)}`;
+                }
+            });
+    }       
+
+
+    renderProducts();
+
+
+
     })

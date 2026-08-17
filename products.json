@@ -8,7 +8,7 @@
         "date": "2026-02-01",
         "price": 3500000,
         "image": {
-            "thumbnail": "/src/resources/sp1.png",
+            "thumbnail": "/src/resources/top1.png",
             "side": "/src/resources/Frame 208.png",
             "above": "/src/resources/Frame 217.png",
             "behind": "/src/resources/Frame 218.png",
@@ -24,7 +24,7 @@
         "date": "2026-01-15",
         "price": 2800000,
         "image": {
-            "thumbnail": "/src/resources/sp1.png",
+            "thumbnail": "/src/resources/top2.png",
             "side": "/src/resources/Frame 208.png",
             "above": "/src/resources/Frame 217.png",
             "behind": "/src/resources/Frame 218.png",
@@ -40,7 +40,7 @@
         "date": "2025-12-20",
         "price": 2200000,
         "image": {
-            "thumbnail": "/src/resources/sp1.png",
+            "thumbnail": "/src/resources/top3.png",
             "side": "/src/resources/Frame 208.png",
             "above": "/src/resources/Frame 217.png",
             "behind": "/src/resources/Frame 218.png",

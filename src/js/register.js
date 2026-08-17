@@ -14,6 +14,7 @@ registerBtn.addEventListener('click', function(){
     const password          = passwordInput.value.trim();
     const confirmPassword   = confirmPasswordInput.value.trim();
     const usernamePattern   = /^[a-zA-Z0-9]*$/;
+    const emailPattern      = /^[a-zA-Z0-9]+@gmail\.com$/;
     
 
     if(username == "" || password == "" || email == "" || confirmPassword == ""){
@@ -40,6 +41,12 @@ registerBtn.addEventListener('click', function(){
         return;
     }
 
+
+    if(!emailPattern.test(email)){
+        alert("Email phải có dạng abc123@gmail.com!");
+        emailInput.style.border = "var(--danger-color) 2px solid";
+        return;
+    }
 
     if(userEmailFound){
         emailInput.style.border = "var(--danger-color) 2px solid";

@@ -97,7 +97,6 @@ main{
     border: black 2px solid;
     border-radius: 20px ;
     padding: 10px;
-    box-shadow: 5px 5px 10px;
     .price{
         color: var(--danger-color);
     }
@@ -139,14 +138,12 @@ main{
 }
 
 
-
 .productEvaluation{
     width: 100%;
     display: flex;
     justify-content: space-around;
     align-items: center;
     gap: 50px;
-
 }
 
 .productEvaluation_container{
@@ -158,7 +155,6 @@ main{
     column-gap: 20px;
     padding: 5px;
     margin-top: 50px;
-    box-shadow: 5px 5px 10px;
 }
 
 .productEvaluation_container.middle{
@@ -185,10 +181,11 @@ main{
     border-bottom: var(--black-color) 3px solid;
 }
 
-
 .reputation{
     margin-top: 50px;
 }
+
+
 
 @media (max-width: 442px){
 
@@ -254,5 +251,62 @@ main{
     .banners{
         flex-wrap: wrap;
         gap: 15px;
+    }
+}
+
+
+
+@media (min-width: 443px) and (max-width: 913px){
+
+    .explore{
+        height: auto;
+        min-height: 650px;
+        padding: 30px 15px;
+    }
+
+    .explore_text{
+        height: auto;
+
+        h2{
+            width: 100%;
+            max-width: 500px;
+        }
+
+        p{
+            width: 100%;
+            max-width: 500px;
+        }
+    }
+
+    .brands{
+        height: auto;
+        flex-wrap: wrap;
+        gap: 15px;
+        padding: 15px 0;
+    }
+
+    .onSaleProduction_text p{
+        width: 100%;
+        max-width: 500px;
+        padding: 0 15px;
+    }
+
+    .referentialProduction{
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .productEvaluation{
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+
+    .productEvaluation_container{
+        width: 45%;
+        min-width: 300px;
+    }
+
+    .productEvaluation_container.middle{
+        transform: none;
     }
 }

@@ -158,9 +158,7 @@ function goToPage(page) {
     window.scrollTo({ behavior: "smooth" });
 }
 
-// ==========================================
-// 🔥 ĐOẠN CODE XỬ LÝ LOGIC BỘ LỌC (FILTER) KHỚP VỚI HTML CỦA BẠN
-// ==========================================
+//xử lý dữ liệu lọc
 
 function initFilterLogic() {
     const brandButtons = document.querySelectorAll(".listBox .searchBtn button");

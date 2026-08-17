@@ -1,7 +1,6 @@
 @import "./root.css";
 @import "./template.css";
 
-
 body{
     width: 100%;
     min-height: 100vh;
@@ -44,8 +43,7 @@ body{
 
 .input-control label {
     color: var(--black-color);
-    font-weight: 600;
-
+    font-weight: 500;
 }
 
 .input-control input{
@@ -87,8 +85,6 @@ input:focus{
     background-color: var(--white-color);
     border: var(--success-color) 2px solid;
 }
-
-
 @media (max-width: 442px){
 
     body{
@@ -107,5 +103,13 @@ input:focus{
     .input-control input{
         height: 42px;
         font-size: 13px;
+    }
+}
+
+@media (min-width: 443px) and (max-width: 913px){
+
+    .wrapper{
+        width: 90%;
+        max-width: 500px;
     }
 }

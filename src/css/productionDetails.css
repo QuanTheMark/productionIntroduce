@@ -1,8 +1,6 @@
 @import "./default.css";
 @import "./menuBar.css";
 @import "./template.css";
-
-
 header{
     width: 100%;
     height: 500px;
@@ -92,6 +90,7 @@ header > div:nth-child(2){
     flex-direction: column;
     gap: 20px;
 }
+
 
 .productionDetails .overAll .title{
     display: flex;
@@ -217,7 +216,6 @@ header > div:nth-child(2){
     transform: scale(110%);
 }
 
-
 @media (max-width: 442px){
 
     header{
@@ -283,6 +281,61 @@ header > div:nth-child(2){
     .productEvaluation_container{
         width: 100%;
         max-width: 300px;
+    }
+
+    .productEvaluation_container.middle{
+        transform: none;
+    }
+}
+
+@media (min-width: 443px) and (max-width: 913px){
+
+    header{
+        flex-wrap: wrap;
+        height: auto;
+        gap: 20px;
+    }
+
+    header > div:nth-child(2){
+        border-right: none;
+        border-bottom: var(--black-color) 3px solid;
+        height: auto;
+        width: 100%;
+        padding-bottom: 20px;
+    }
+
+    .productionIllustration{
+        width: 100%;
+    }
+
+    .productionIllustration_image{
+        height: 300px;
+    }
+
+    .productionDetails .order button{
+        width: 130px;
+        font-size: 1rem;
+    }
+
+    .sizePicker .sizeBtn{
+        grid-template-columns: repeat(5, 1fr);
+        gap: 10px;
+    }
+
+    .banners{
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+
+    .productEvaluation{
+        flex-wrap: wrap;
+        gap: 30px;
+        justify-content: center;
+    }
+
+    .productEvaluation_container{
+        width: 45%;
+        min-width: 220px;
     }
 
     .productEvaluation_container.middle{

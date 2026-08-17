@@ -55,10 +55,10 @@ async function initProductDetailPage() {
 
         const data = await fetchProducts();
         
-        // SỬA LỖI: Đảm bảo lấy đúng mảng sản phẩm bất kể cấu trúc JSON là Array hay Object bọc ngoài
+        // Đảm bảo lấy đúng mảng sản phẩm bất kể cấu trúc JSON là Array hay Object bọc ngoài
         const productList = Array.isArray(data) ? data : (data.products || []);
 
-        // SỬA LỖI: Ép cả 2 về String bằng cách dùng String() để so sánh chính xác tuyệt đối
+        // Ép cả 2 về String bằng cách dùng String() để so sánh chính xác tuyệt đối
         let product = productList.find((item) => String(item.id) === String(productId));
 
         // Nếu không tìm thấy, lấy sản phẩm đầu tiên làm mặc định để giao diện không bị trống

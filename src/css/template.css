@@ -123,7 +123,6 @@
     opacity: 0.8;
 }
 
-
 .btnLeft, .btnRight{
     border: none;
     background-color: transparent;
@@ -139,8 +138,6 @@
     width: 30px;
     height: 20px;
 }
-
-
 .footer, footer{
     width: 100%;
     height: 100px;
@@ -149,6 +146,7 @@
     align-items: center;
     background-color: var(--secondary-gray-color);
     margin-top: 20px;
+    padding: 20px;
 }
 
 .term{
@@ -159,12 +157,9 @@
 .term div{
     border-right: var(--black-color) 2px solid;
 }
-
-
 .term div:last-child{
     border-right: none;
 }
-
 
 @media (max-width: 442px){
 
@@ -218,5 +213,47 @@
 
     .term div{
         border-right: none;
+    }
+}
+
+
+
+@media (min-width: 443px) and (max-width: 913px){
+
+    .plate{
+        width: 45px;
+        height: 45px;
+    }
+
+    .reputation{
+        height: auto;
+        grid-template-columns: 1fr 1fr;
+        row-gap: 30px;
+    }
+
+    .reputation_content{
+        border-right: none;
+    }
+
+    .reputation_content:nth-child(odd){
+        border-right: var(--black-color) 1px solid;
+    }
+
+    .productionReview_text p{
+        width: 100%;
+        max-width: 500px;
+        padding: 0 20px;
+    }
+
+    .footer, footer{
+        height: auto;
+        flex-wrap: wrap;
+        gap: 15px;
+        padding: 15px 0;
+    }
+
+    .term{
+        flex-wrap: wrap;
+        justify-content: center;
     }
 }

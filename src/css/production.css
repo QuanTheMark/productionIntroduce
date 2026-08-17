@@ -62,7 +62,7 @@
     margin-top: auto;
 }
 
-/* .plate + biểu tượng thương hiệu: xem shared.css */
+
 
 .filter{
     display: flex;
@@ -119,7 +119,7 @@
     padding: 10px;
 }
 
-.searchBtn button:hover, .searchBtn button.active{
+.searchBtn button:hover{
     background-color: var(--black-color);
     color: var(--white-color);
     cursor: pointer;
@@ -281,20 +281,6 @@
 }
 
 
-.content footer button.active{
-    background-color: var(--black-color);
-    color: var(--white-color);
-}
-
-.content footer button:disabled{
-    opacity: 0.4;
-    cursor: default;
-}
-
-.content footer button:disabled:hover{
-    background-color: transparent;
-    color: var(--black-color);
-}
 
 
 @media (max-width: 442px){
@@ -346,6 +332,61 @@
         grid-template-columns: 1fr;
         grid-column-gap: 0;
         grid-row-gap: 30px;
+        margin-left: 0;
+        justify-items: center;
+    }
+
+    .content footer{
+        margin: 20px 0;
+        flex-wrap: wrap;
+    }
+}
+
+
+@media (min-width: 443px) and (max-width: 913px){
+
+    .container{
+        padding: 10px;
+    }
+
+    .sidebar{
+        width: 220px;
+        padding: 10px 15px;
+    }
+
+    .box-text{
+        width: 100%;
+        height: auto;
+        font-size: 1.3rem;
+        padding: 30px 0;
+    }
+
+    .content header{
+        height: 300px;
+    }
+
+    .iconics{
+        flex-wrap: wrap;
+        height: auto;
+        gap: 15px;
+    }
+
+    .toolBox{
+        gap: 25px;
+    }
+
+    .searchBtn{
+        width: 100%;
+    }
+
+    .priceTopic, .result{
+        width: 100%;
+    }
+
+    .boxWrapper{
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 30px;
+        grid-row-gap: 50px;
         margin-left: 0;
         justify-items: center;
     }

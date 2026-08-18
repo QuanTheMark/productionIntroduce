@@ -78,8 +78,8 @@ document.addEventListener('DOMContentLoaded', function() {
         `;
         
         mobileMenuFooter.innerHTML = `
-            <a href="/register.html" style="display: block; width: 100%; padding: 12px; text-align: center; background-color: var(--secondary-gray-color); color: var(--black-color); text-decoration: none; border-radius: 8px; margin-bottom: 10px; font-weight: 600;">Đăng ký</a>
-            <a href="/login.html" style="display: block; width: 100%; padding: 12px; text-align: center; background-color: var(--black-color); color: var(--white-color); text-decoration: none; border-radius: 8px; font-weight: 600;">Đăng nhập</a>
+            <a href="register.html" style="display: block; width: 100%; padding: 12px; text-align: center; background-color: var(--secondary-gray-color); color: var(--black-color); text-decoration: none; border-radius: 8px; margin-bottom: 10px; font-weight: 600;">Đăng ký</a>
+            <a href="login.html" style="display: block; width: 100%; padding: 12px; text-align: center; background-color: var(--black-color); color: var(--white-color); text-decoration: none; border-radius: 8px; font-weight: 600;">Đăng nhập</a>
         `;
     }
     

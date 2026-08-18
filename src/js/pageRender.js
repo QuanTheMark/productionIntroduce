@@ -56,10 +56,10 @@ function buildGuestPanelHTML() {
             <span><i class="fa-solid fa-user"></i></span>
         </div>
         <div class="registerBtn">
-            <a href="/register.html">Đăng ký</a>
+            <a href="register.html">Đăng ký</a>
         </div>
         <div class="loginBtn">
-            <a href="/login.html">Đăng nhập</a>
+            <a href="login.html">Đăng nhập</a>
         </div>
     `;
 }

@@ -10,7 +10,7 @@ body{
     justify-content: center;
     align-items: center;
     padding: 20px;
-    background-image: url("/src/resources/background.png");
+    background-image: url("../resources/background.png");
 }
 
 .wrapper{

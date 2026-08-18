@@ -1,54 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sản phẩm</title>
-     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Google+Sans+Flex:opsz,wght@6..144,1..1000&family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Google+Sans+Flex:opsz,wght@6..144,1..1000&family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+
+
     <link rel="stylesheet" href="/src/css/production.css">
 </head>
 
 <body>
-    <section class  = "menuBar">
+    <section class="menuBar">
+        <div class="logo">
+            <div class="logo_image"></div>
+            <span><b>Abydas</b></span>
+        </div>
 
-            <div class = "logo">
-                <div class = "logo_image"></div>
-                <span><b>Abydas</b></span>
+        <div class="menu-toggle" id="menuToggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <div class="toolBar" id="toolBar">
+            <div>
+                <a href="index.html">Trang chủ</a>
             </div>
-            <div class = "toolBar">
-                <div>
-                    <a href="index.html">Trang chủ</a>
-              
-                </div>
-                <div>
+            <div>
                 <a href="production.html">Sản phẩm</a>
-    
-                 </div>
-
-                <div>
-                    <a href="contact.html">Liên hệ</a>
-
-                </div>
-
-                <div>
-                    <a href="aboutUs.html">Về chúng tôi</a>
-
-                </div>
             </div>
-            <div class = "userPanel"></div>
+            <div>
+                <a href="contact.html">Liên hệ</a>
+            </div>
+            <div>
+                <a href="aboutUs.html">Về chúng tôi</a>
+            </div>
+        </div>
+
+        <div class="userPanel" id="userPanel"></div>
     </section>
 
+
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay">
+        <div class="mobile-menu-header">
+            <div class="mobile-user-info" id="mobileUserInfo">
+
+            </div>
+            <button class="mobile-menu-close" id="mobileMenuClose">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <nav class="mobile-nav">
+            <a href="index.html">
+                <i class="fa-solid fa-house"></i>
+                <span>Trang chủ</span>
+            </a>
+            <a href="production.html">
+                <i class="fa-solid fa-box"></i>
+                <span>Sản phẩm</span>
+            </a>
+            <a href="contact.html">
+                <i class="fa-solid fa-envelope"></i>
+                <span>Liên hệ</span>
+            </a>
+            <a href="aboutUs.html">
+                <i class="fa-solid fa-info-circle"></i>
+                <span>Về chúng tôi</span>
+            </a>
+        </nav>
+        <div class="mobile-menu-footer">
+        </div>
+    </div>
+
+
     <div class="container">
+
         <aside class="sidebar">
             <div class="toolBox">
                 <div class="filter">
                     <span><i class="fa-solid fa-sliders"></i></span>
                     <h3>Bộ lọc</h3>
                 </div>
- 
                 <button>Xóa tất cả</button>
             </div>
             <div class="listBox">
@@ -67,28 +106,47 @@
             <div class="genderBox">
                 <h3 class="title">Giới tính</h3>
                 <div class="genderChoice">
-                    <div class="inputGender"><input type="checkbox" name="gender" id="male"><span><label for="male">Nam</label></span></div>
-                    <div class="inputGender"><input type="checkbox" name="gender" id="female"><span><label for="female">Nữ</label></span></div>
+                    <div class="inputGender">
+                        <input type="checkbox" name="gender" id="male">
+                        <span><label for="male">Nam</label></span>
+                    </div>
+                    <div class="inputGender">
+                        <input type="checkbox" name="gender" id="female">
+                        <span><label for="female">Nữ</label></span>
+                    </div>
                 </div>
             </div>
             <div class="sortBox">
                 <h3 class="title">Sắp xếp</h3>
                 <div class="priceSelector">
-                    <div class="priceTopic"><input type="radio" name="price" id="new"><span><label for="new">Mới nhất</label></span></div>
-                    <div class="priceTopic"><input type="radio" name="price" id="onSale"><span><label for="onSale">Bán chạy</label></span></div>
-                    <div class="priceTopic"><input type="radio" name="price" id="lowToHigh"><span><label for="lowToHigh">Giá: Thấp đến cao</label></span></div>
-                    <div class="priceTopic"><input type="radio" name="price" id="highToLow"><span><label for="highToLow">Giá: Cao đến thấp</label></span></div>
+                    <div class="priceTopic">
+                        <input type="radio" name="price" id="new">
+                        <span><label for="new">Mới nhất</label></span>
+                    </div>
+                    <div class="priceTopic">
+                        <input type="radio" name="price" id="onSale">
+                        <span><label for="onSale">Bán chạy</label></span>
+                    </div>
+                    <div class="priceTopic">
+                        <input type="radio" name="price" id="lowToHigh">
+                        <span><label for="lowToHigh">Giá: Thấp đến cao</label></span>
+                    </div>
+                    <div class="priceTopic">
+                        <input type="radio" name="price" id="highToLow">
+                        <span><label for="highToLow">Giá: Cao đến thấp</label></span>
+                    </div>
                 </div>
             </div>
             <button class="result">Xem kết quả</button>
         </aside>
+
+
         <section class="content">
             <header>
                 <div class="box-text">
                     <h2 class="title">KHÁM PHÁ BỘ SƯU TẬP</h2>
-                    <p class="text">Hơn 50+ mẫu Sneaker chính hãng từ 7 thương hiệu hàng đầu. </p>
+                    <p class="text">Hơn 50+ mẫu Sneaker chính hãng từ 7 thương hiệu hàng đầu.</p>
                 </div>
- 
                 <div class="iconics">
                     <div class="plate nike"></div>
                     <div class="plate adidas"></div>
@@ -100,33 +158,33 @@
                 </div>
             </header>
             <main>
-            
                 <section class="boxWrapper"></section>
             </main>
-     
             <footer></footer>
         </section>
     </div>
 
-    <section class = "footer">
-          <div class = "logo">
-                    <div class ="logo_image"></div>
-                    <h2>Abydas</h2>
-                </div>
 
-                <div>
-                    <p>Copyright &copy; 2026 <b>Abydas</b>. All rights reserved.</p>
-                </div>
-
-                <div class ="term">
-                    <a href="/privatePolicy.html">Chính sách bảo mật</a>
-                    <div></div>
-                    <a href="/terms.html">Điều khoản sử dụng</a>
-            </div>
+    <section class="footer">
+        <div class="logo">
+            <div class="logo_image"></div>
+            <h2>Abydas</h2>
+        </div>
+        <div>
+            <p>Copyright &copy; 2026 <b>Abydas</b>. All rights reserved.</p>
+        </div>
+        <div class="term">
+            <a href="/privatePolicy.html">Chính sách bảo mật</a>
+            <div></div>
+            <a href="/terms.html">Điều khoản sử dụng</a>
+        </div>
     </section>
+
+
+    <script src="./src/js/pageRender.js"></script>
+    <script src="./src/js/mobileMenu.js"></script>
+    <script src="/src/js/production.js"></script>
+    <script src="https://kit.fontawesome.com/cebfc5049a.js" crossorigin="anonymous"></script>
 </body>
 
-<script src="./src/js/pageRender.js"></script>
-<script src="https://kit.fontawesome.com/cebfc5049a.js" crossorigin="anonymous"></script>
-<script src="/src/js/production.js" defer></script>
 </html>

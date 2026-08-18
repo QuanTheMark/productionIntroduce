@@ -423,6 +423,143 @@
     }
 }
 
+/* ===== MOBILE FILTER SLIDE ===== */
+.filter-slide-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 320px;
+    max-width: 85%;
+    height: 100%;
+    background-color: var(--white-color);
+    box-shadow: 5px 0 20px rgba(0,0,0,0.2);
+    z-index: 9999;
+    transition: left 0.3s ease;
+    overflow-y: auto;
+    padding: 20px;
+}
+
+.filter-slide-overlay.active {
+    left: 0;
+    display: block;
+}
+
+.filter-slide-overlay.show {
+    left: 0;
+}
+
+.filter-slide-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 20px;
+}
+
+.filter-slide-header h2 {
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.filter-slide-close {
+    background: none;
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: var(--black-color);
+}
+
+.filter-slide-content {
+    padding: 10px 0;
+}
+
+.filter-slide-content .listBox,
+.filter-slide-content .genderBox,
+.filter-slide-content .sortBox {
+    margin-top: 30px;
+}
+
+.filter-slide-content .listBox:first-child {
+    margin-top: 0;
+}
+
+.filter-slide-content .searchBtn button {
+    height: 45px;
+    font-size: 1rem;
+}
+
+.filter-slide-content .priceTopic {
+    height: 45px;
+    font-size: 1rem;
+}
+
+.filter-slide-content .result {
+    margin-top: 30px;
+    width: 100%;
+}
+
+.filter-slide-footer {
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+    margin-top: 20px;
+}
+
+/* Mobile Filter Button */
+.mobile-filter-btn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: var(--black-color);
+    color: var(--white-color);
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    z-index: 999;
+    transition: all 0.3s ease;
+}
+
+.mobile-filter-btn:hover {
+    transform: scale(1.1);
+}
+
+/* Overlay background for filter */
+.filter-overlay-bg {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 9998;
+}
+
+.filter-overlay-bg.active {
+    display: block;
+}
+
+@media (max-width: 913px) {
+
+}
+
+@media (min-width: 914px) {
+    .filter-slide-overlay,
+    .filter-overlay-bg {
+        display: none !important;
+    }
+    
+    .mobile-filter-btn {
+        display: none !important;
+    }
+}
+
 @media (min-width: 443px) and (max-width: 913px){
     .container{
         padding: 10px;
@@ -480,3 +617,7 @@
         padding: 15px;
     }
 }
+
+
+
+

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,42 +8,80 @@
 
     <link rel="stylesheet" href="src/css/contact.css">
 </head>
+
 <body>
 
-    <header class  = "menuBar">
-            <div class = "logo">
-                <div clas = "logo_image"></div>
-                <span><b>Abydas</b></span>
+    <section class="menuBar">
+        <div class="logo">
+            <div class="logo_image"></div>
+            <span><b>Abydas</b></span>
+        </div>
+
+
+        <div class="menu-toggle" id="menuToggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <div class="toolBar" id="toolBar">
+            <div>
+                <a href="index.html">Trang chủ</a>
             </div>
-            <div class = "toolBar">
-                <div>
-                    <a href="index.html">Trang chủ</a>
-              
-                </div>
-                <div>
-                    <a href="production.html">Sản phẩm</a>
-    
-                 </div>
-
-                <div>
-                    <a href="contact.html">Liên hệ</a>
-
-                </div>
-
-                <div>
-                    <a href="aboutUs.html">Về chúng tôi</a>
-
-                </div>
+            <div>
+                <a href="production.html">Sản phẩm</a>
             </div>
-            <div class = "userPanel"></div>
-    </header>  
+            <div>
+                <a href="contact.html">Liên hệ</a>
+            </div>
+            <div>
+                <a href="aboutUs.html">Về chúng tôi</a>
+            </div>
+        </div>
+
+        <div class="userPanel" id="userPanel"></div>
+    </section>
+
+
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay">
+        <div class="mobile-menu-header">
+            <div class="mobile-user-info" id="mobileUserInfo">
+
+            </div>
+            <button class="mobile-menu-close" id="mobileMenuClose">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <nav class="mobile-nav">
+            <a href="index.html">
+                <i class="fa-solid fa-house"></i>
+                <span>Trang chủ</span>
+            </a>
+            <a href="production.html">
+                <i class="fa-solid fa-box"></i>
+                <span>Sản phẩm</span>
+            </a>
+            <a href="contact.html">
+                <i class="fa-solid fa-envelope"></i>
+                <span>Liên hệ</span>
+            </a>
+            <a href="aboutUs.html">
+                <i class="fa-solid fa-info-circle"></i>
+                <span>Về chúng tôi</span>
+            </a>
+        </nav>
+        <div class="mobile-menu-footer">
+
+        </div>
+    </div>
 
     <main>
         <section class="contactUs">
 
             <div class="contactUs_intro">
                 <h1>Liên hệ với chúng tôi</h1>
-                <p>Bạn có câu hỏi về sản phẩm, đơn hàng hoặc cần hỗ trợ? Hãy để lại lời nhắn, đội ngũ của chúng tôi sẽ phản hồi trong thời gian sớm nhất.</p>
+                <p>Bạn có câu hỏi về sản phẩm, đơn hàng hoặc cần hỗ trợ? Hãy để lại lời nhắn, đội ngũ của chúng tôi sẽ
+                    phản hồi trong thời gian sớm nhất.</p>
             </div>
 
             <div class="contactUs_content">
@@ -113,7 +152,8 @@
 
                     <div class="formGroup">
                         <label for="message">Nội dung</label>
-                        <textarea id="message" name="message" placeholder="Nhập nội dung cần hỗ trợ" required></textarea>
+                        <textarea id="message" name="message" placeholder="Nhập nội dung cần hỗ trợ"
+                            required></textarea>
                     </div>
 
                     <button type="submit" class="btn-customs">Gửi liên hệ</button>
@@ -122,36 +162,36 @@
             </div>
 
             <div class="mapEmbed">
-                <iframe
-                    src="https://www.google.com/maps?q=Nguyen%20Hue%2C%20Quan%201%2C%20TP.HCM&output=embed"
-                    loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade">
+                <iframe src="https://www.google.com/maps?q=Nguyen%20Hue%2C%20Quan%201%2C%20TP.HCM&output=embed"
+                    loading="lazy" referrerpolicy="no-referrer-when-downgrade">
                 </iframe>
             </div>
 
         </section>
     </main>
 
-       <section class = "footer">
-          <div class = "logo">
-                    <div class ="logo_image"></div>
-                    <h2>Abydas</h2>
-                </div>
+    <section class="footer">
+        <div class="logo">
+            <div class="logo_image"></div>
+            <h2>Abydas</h2>
+        </div>
 
-                <div>
-                    <p>Copyright &copy; 2026 <b>Abydas</b>. All rights reserved.</p>
-                </div>
+        <div>
+            <p>Copyright &copy; 2026 <b>Abydas</b>. All rights reserved.</p>
+        </div>
 
-                <div class ="term">
-                    <a href="/privatePolicy.html">Chính sách bảo mật</a>
-                    <div></div>
-                    <a href="/terms.html">Điều khoản sử dụng</a>
-            </div>
+        <div class="term">
+            <a href="/privatePolicy.html">Chính sách bảo mật</a>
+            <div></div>
+            <a href="/terms.html">Điều khoản sử dụng</a>
+        </div>
     </section>
 </body>
 
-    <script src="/src/js/pageRender.js"></script>
-    <script src="https://kit.fontawesome.com/cebfc5049a.js" crossorigin="anonymous"></script>
+<script src="/src/js/pageRender.js"></script>
+<script src="https://kit.fontawesome.com/cebfc5049a.js" crossorigin="anonymous"></script>
+<script src="./src/js/mobileMenu.js"></script>
 
 </body>
+
 </html>

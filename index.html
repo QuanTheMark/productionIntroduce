@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,52 +10,90 @@
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Google+Sans+Flex:opsz,wght@6..144,1..1000&family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./src/css/home.css">
 
-   
+
 </head>
+
 <body>
 
-    <section class  = "menuBar">
-            <div class = "logo">
-                <div class = "logo_image"></div>
-                <span><b>Abydas</b></span>
+    <section class="menuBar">
+        <div class="logo">
+            <div class="logo_image"></div>
+            <span><b>Abydas</b></span>
+        </div>
+
+
+        <div class="menu-toggle" id="menuToggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <div class="toolBar" id="toolBar">
+            <div>
+                <a href="index.html">Trang chủ</a>
             </div>
-            <div class = "toolBar">
-                <div>
-                    <a href="index.html">Trang chủ</a>
-              
-                </div>
-                <div>
-                    <a href="production.html">Sản phẩm</a>
-    
-                 </div>
-
-                <div>
-                    <a href="contact.html">Liên hệ</a>
-
-                </div>
-
-                <div>
-                    <a href="aboutUs.html">Về chúng tôi</a>
-
-                </div>
+            <div>
+                <a href="production.html">Sản phẩm</a>
             </div>
-            <div class = "userPanel"></div>
-    </section>  
+            <div>
+                <a href="contact.html">Liên hệ</a>
+            </div>
+            <div>
+                <a href="aboutUs.html">Về chúng tôi</a>
+            </div>
+        </div>
+
+        <div class="userPanel" id="userPanel"></div>
+    </section>
+
+
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay">
+        <div class="mobile-menu-header">
+            <div class="mobile-user-info" id="mobileUserInfo">
+
+            </div>
+            <button class="mobile-menu-close" id="mobileMenuClose">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <nav class="mobile-nav">
+            <a href="index.html">
+                <i class="fa-solid fa-house"></i>
+                <span>Trang chủ</span>
+            </a>
+            <a href="production.html">
+                <i class="fa-solid fa-box"></i>
+                <span>Sản phẩm</span>
+            </a>
+            <a href="contact.html">
+                <i class="fa-solid fa-envelope"></i>
+                <span>Liên hệ</span>
+            </a>
+            <a href="aboutUs.html">
+                <i class="fa-solid fa-info-circle"></i>
+                <span>Về chúng tôi</span>
+            </a>
+        </nav>
+        <div class="mobile-menu-footer">
+
+        </div>
+    </div>
     <header>
-        <section class = "explore">
-            <div class ="explore_text">
+        <section class="explore">
+            <div class="explore_text">
                 <h2>Định Hình Phong Cách,Bứt Phá Giới Hạn</h2>
-                <p>Đột phá thiết kế, nâng tầm từng bước chuyển động, khám phá BST giày sneakers cá tính nhất mùa này.</p>
+                <p>Đột phá thiết kế, nâng tầm từng bước chuyển động, khám phá BST giày sneakers cá tính nhất mùa này.
+                </p>
             </div>
-            <button class ="explore_btnExplore btn-customs">Khám phá ngay</button>
+            <button class="explore_btnExplore btn-customs">Khám phá ngay</button>
         </section>
     </header>
     <main id="main"></main>
-    <footer id ="footer"></footer>
+    <footer id="footer"></footer>
 </body>
 <script src="./src/js/pageRender.js" defer></script>
 <script src="./src/js/home.js"></script>
 <script src="https://kit.fontawesome.com/cebfc5049a.js" crossorigin="anonymous"></script>
-<script>
-</script>
-</html>
+<script src="./src/js/mobileMenu.js"></script>
+
+</html

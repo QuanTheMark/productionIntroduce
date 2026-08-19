@@ -77,10 +77,24 @@
 
 .purchase-quantity-wrapper {
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    align-items: self-start;
     justify-content: center;
     gap: 20px;
-    margin: 20px 0;
+    margin: 20px 65px;
+    
+}
+
+.quantityBox{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.sizeChosenBox{
+    display: flex;
+    gap: 20px;
+
 }
 
 .purchase-quantity-wrapper label {

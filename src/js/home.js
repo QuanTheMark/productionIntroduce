@@ -1,12 +1,10 @@
-    const start = document.querySelector(".explore_btnExplore");
-    const main = document.querySelector("#main");
-    const footer = document.querySelector("#footer");
-    footer.style.display = "none";
-    start.addEventListener("click", function(){
-        footer.style.display = "block";
-        main.innerHTML = 
-
-        `
+const start = document.querySelector(".explore_btnExplore");
+const main = document.querySelector("#main");
+const footer = document.querySelector("#footer");
+footer.style.display = "none";
+start.addEventListener("click", function () {
+  footer.style.display = "block";
+  main.innerHTML = `
          <section class = "brands">
             <div class = "plate nike"></div>
             <div class = "plate adidas"></div>
@@ -31,8 +29,8 @@
                 <p>Sự hài lòng của bạn là động lực để Abydas phát triển mỗi ngày.</p>
             </div>
 
-            <div class = "banners">
-                    <button class = "btnLeft"><i class="fa-solid fa-circle-arrow-left" style="color: rgb(0, 0, 0);"></i></button>
+           
+                 
          
             <div class = "productEvaluation">
                 <div class = "productEvaluation_container">
@@ -90,8 +88,8 @@
                     </div>
                 </div>
             </div>
-                <button class = "btnRight"><i class="fa-solid fa-circle-arrow-right" style="color: rgb(0, 0, 0);"></i></button>
-        </div>
+                
+
         </section>
 
         <section class = "reputation">
@@ -138,10 +136,9 @@
         </section>
 
 
-        `
+        `;
 
-        footer.innerHTML = 
-        `
+  footer.innerHTML = `
         <div class = "footer">
            <div class = "logo">
                     <div class ="logo_image"></div>
@@ -158,41 +155,40 @@
                     <a href="/terms.html">Điều khoản sử dụng</a>
             </div>
         </div>
-        `
-       if(main){
-        main.scrollIntoView({
-            behavior: "smooth"
-        })
-       }
+        `;
+  if (main) {
+    main.scrollIntoView({
+      behavior: "smooth",
+    });
+  }
 
-
-
-    
-    function formatPrice(price) {
+  function formatPrice(price) {
     return (price || 0).toLocaleString("vi-VN") + " VNĐ";
-    }
+  }
 
-    async function fetchProducts() {
-        const response = await fetch("/products.json");
-        if (!response.ok) {
-            throw new Error("Không thể tải dữ liệu sản phẩm.");
-        }
-        const data = await response.json();
-        return Array.isArray(data) ? data : (data.products || []);
+  async function fetchProducts() {
+    const response = await fetch("/products.json");
+    if (!response.ok) {
+      throw new Error("Không thể tải dữ liệu sản phẩm.");
     }
+    const data = await response.json();
+    return Array.isArray(data) ? data : data.products || [];
+  }
 
-    async function renderProducts() {
-        const referentialProduction = document.querySelector(".referentialProduction");
-        if (!referentialProduction) return;
-    
-        const products = await fetchProducts();
-        const limitedProducts = products.slice(0, 3);
-    
-        // 1. Tạo chuỗi HTML tích lũy cho toàn bộ sản phẩm
-        let referentialProductionContent = "";
-        limitedProducts.forEach(product => {
-            referentialProductionContent += `
-                <div class="referentialProduction_container" style="background-image: url('${product.image?.thumbnail || ''}')">
+  async function renderProducts() {
+    const referentialProduction = document.querySelector(
+      ".referentialProduction",
+    );
+    if (!referentialProduction) return;
+
+    const products = await fetchProducts();
+    const limitedProducts = products.slice(0, 3);
+
+    // 1. Tạo chuỗi HTML tích lũy cho toàn bộ sản phẩm
+    let referentialProductionContent = "";
+    limitedProducts.forEach((product) => {
+      referentialProductionContent += `
+                <div class="referentialProduction_container" style="background-image: url('${product.image?.thumbnail || ""}')">
                      <div class="container_information">
                         <div class="title"><h2>${product.name}</h2></div>
                         <div class="price"><h3>${formatPrice(product.price)}</h3></div>
@@ -203,24 +199,21 @@
     });
 
     // 2. Chèn toàn bộ danh sách vào DOM một lần duy nhất
-         referentialProduction.innerHTML = referentialProductionContent;
+    referentialProduction.innerHTML = referentialProductionContent;
 
-         // 3. Ủy quyền sự kiện: Chỉ lắng nghe duy nhất tại thẻ cha referentialProduction
-         referentialProduction.addEventListener("click", (event) => {
-             // Tìm xem phần tử được click có phải là nút containerBtn hay không
-             const btn = event.target.closest(".containerBtn");
+    // 3. Ủy quyền sự kiện: Chỉ lắng nghe duy nhất tại thẻ cha referentialProduction
+    referentialProduction.addEventListener("click", (event) => {
+      // Tìm xem phần tử được click có phải là nút containerBtn hay không
+      const btn = event.target.closest(".containerBtn");
 
-             if (btn) {
-                 // Lấy ID sản phẩm trực tiếp từ thuộc tính dữ liệu của nút đó
-                 const productId = btn.dataset.productId;
-                 window.location.href = `/productionDetail.html?id=${encodeURIComponent(productId)}`;
-                }
-            });
-    }       
+      if (btn) {
+        // Lấy ID sản phẩm trực tiếp từ thuộc tính dữ liệu của nút đó
+        const productId = btn.dataset.productId;
+        window.location.href = `/productionDetail.html?id=${encodeURIComponent(productId)}`;
+      }
+    });
+  }
 
-// Gọi hàm để thực thi
-renderProducts();
-
-
-
-    })
+  // Gọi hàm để thực thi
+  renderProducts();
+});

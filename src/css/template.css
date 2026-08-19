@@ -103,14 +103,13 @@
 }
 
 .productionReview{
-    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 20px;
     margin-top: 50px;
-    padding: 5px;
+    padding: 10px;
 }
 
 .productionReview_text{
@@ -123,11 +122,6 @@
     opacity: 0.8;
 }
 
-.btnLeft, .btnRight{
-    border: none;
-    background-color: transparent;
-    cursor: pointer;
-}
 
 .fa-circle-arrow-left, .fa-circle-arrow-right{
     width: 50px;

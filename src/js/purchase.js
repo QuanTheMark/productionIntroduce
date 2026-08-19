@@ -1,4 +1,3 @@
-// purchasePopup.js
 function formatPrice(price) {
     return (price || 0).toLocaleString("vi-VN") + " VNĐ";
 }
@@ -15,6 +14,34 @@ async function fetchProducts() {
     }
     return response.json();
 }
+
+
+let sizePicked = "36";
+function sizePicker() {
+    const sizes = document.querySelectorAll(".sizeBtn button");
+
+    sizes[0].classList.add("active");
+    
+
+    sizes.forEach(size => {
+        size.addEventListener("click", function(event) {
+            sizes.forEach(size => 
+                
+                
+                size.classList.remove("active"));
+
+            event.currentTarget.classList.add("active");
+            sizePicked = event.currentTarget.value;
+            
+           
+        });
+
+    });
+
+}
+
+sizePicker();
+
 
 // Tạo popup mua hàng
 function createPurchasePopup(product) {
@@ -41,14 +68,26 @@ function createPurchasePopup(product) {
     productPrice.className = "purchase-product-price";
     productPrice.textContent = formatPrice(product.price);
 
-    const quantityWrapper = document.createElement("div");
-    quantityWrapper.className = "purchase-quantity-wrapper";
+    const StatWrapper = document.createElement("div");
+    StatWrapper.className = "purchase-quantity-wrapper";
 
     const quantityLabel = document.createElement("label");
     quantityLabel.textContent = "Số lượng:";
 
+    const quantityBox = document.createElement("div");
+    quantityBox.className = "quantityBox";
+
+    const sizeChosenBox = document.createElement("div");
+    sizeChosenBox.className = "sizeChosenBox";
+
     const quantityControls = document.createElement("div");
     quantityControls.className = "purchase-quantity-controls";
+
+    const SizeLabel = document.createElement("label");
+    SizeLabel.textContent = "Kích thước:";
+
+    const SizeChosen = document.createElement("h3");
+    SizeChosen.textContent = sizePicked
 
     const minusBtn = document.createElement("button");
     minusBtn.textContent = "-";
@@ -86,8 +125,12 @@ function createPurchasePopup(product) {
     quantityControls.appendChild(minusBtn);
     quantityControls.appendChild(quantityInput);
     quantityControls.appendChild(plusBtn);
-    quantityWrapper.appendChild(quantityLabel);
-    quantityWrapper.appendChild(quantityControls);
+    quantityBox.appendChild(quantityLabel);
+    quantityBox.appendChild(quantityControls)
+    sizeChosenBox.append(SizeLabel);
+    sizeChosenBox.appendChild(SizeChosen);
+    StatWrapper.appendChild(quantityBox);
+    StatWrapper.appendChild(sizeChosenBox);
 
     const totalWrapper = document.createElement("div");
     totalWrapper.className = "purchase-total";
@@ -118,7 +161,7 @@ function createPurchasePopup(product) {
     popup.appendChild(productImage);
     popup.appendChild(productName);
     popup.appendChild(productPrice);
-    popup.appendChild(quantityWrapper);
+    popup.appendChild(StatWrapper);
     popup.appendChild(totalWrapper);
     popup.appendChild(buyBtn);
     overlay.appendChild(popup);
@@ -265,69 +308,3 @@ function closePopup() {
         overlay.remove();
     }
 }
-
-// Render chi tiết sản phẩm
-function renderProductDetail(product) {
-    const updates = [
-        { selector: ".productionIllustration_image", prop: "style.backgroundImage", value: `url('${product.image?.thumbnail}')` },
-        { selector: ".banners_image.side", prop: "style.backgroundImage", value: `url('${product.image?.side}')` },
-        { selector: ".banners_image.above", prop: "style.backgroundImage", value: `url('${product.image?.above}')` },
-        { selector: ".banners_image.behind", prop: "style.backgroundImage", value: `url('${product.image?.behind}')` },
-        { selector: ".banners_image.underneath", prop: "style.backgroundImage", value: `url('${product.image?.underneath}')` },
-        { selector: ".productionDetails .title h1", prop: "textContent", value: product.name?.toUpperCase() },
-        { selector: ".order_price h2", prop: "textContent", value: formatPrice(product.price) }
-    ];
-
-    updates.forEach(({ selector, prop, value }) => {
-        const element = document.querySelector(selector);
-        if (element) {
-            if (prop.startsWith("style.")) {
-                const styleProp = prop.split(".")[1];
-                element.style[styleProp] = value;
-            } else {
-                element[prop] = value;
-            }
-        }
-    });
-
-    document.title = `${product.name} | Chi tiết sản phẩm`;
-
-    const cartBtn = document.querySelector(".order_cart");
-    if (cartBtn) {
-        const newCartBtn = cartBtn.cloneNode(true);
-        cartBtn.parentNode.replaceChild(newCartBtn, cartBtn);
-        
-        newCartBtn.addEventListener("click", () => {
-            const popup = createPurchasePopup(product);
-            document.body.appendChild(popup);
-        });
-    }
-}
-
-async function initProductDetailPage() {
-    try {
-        const productId = getProductIdFromUrl();
-        if (!productId) {
-            console.warn("Không tìm thấy tham số ID trên URL.");
-        }
-
-        const data = await fetchProducts();
-        const productList = Array.isArray(data) ? data : (data.products || []);
-
-        let product = productList.find((item) => String(item.id) === String(productId));
-
-        if (!product) {
-            product = productList[0];
-        }
-
-        if (!product) {
-            throw new Error("Không có dữ liệu sản phẩm nào tồn tại.");
-        }
-
-        renderProductDetail(product);
-    } catch (error) {
-        console.error("Lỗi khởi tạo chi tiết sản phẩm:", error);
-    }
-}
-
-document.addEventListener("DOMContentLoaded", initProductDetailPage);
